@@ -16,10 +16,11 @@ function Slider() {
           src={agricole} 
           alt="Pompage solaire"
           style={{ height: '100vh',
+          objectFit: 'cover',
           zIndex: -1 }}
         />
         <Carousel.Caption className='mb-5' style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', color:"white"}} >
-          <h1>Pompage Solaire</h1>
+          <h2>Pompage Solaire</h2>
           <p>Installation d'un système rotatif de 10 panneaux de 400Wc</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -29,10 +30,11 @@ function Slider() {
           src={arrosage} 
           alt="arrosage"
           style={{ height: '100vh',
+          objectFit: 'cover',
           zIndex: -1 }}
         />
         <Carousel.Caption className='mb-5' style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', color:"white"}} >
-          <h1>Arrosage Automatique</h1>
+          <h2>Arrosage Automatique</h2>
           <p>Installation de systeme d'arrosage automatique</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -42,11 +44,11 @@ function Slider() {
           src={ongrid}
           alt="Third slide"
           style={{ height: '100vh' ,
+          objectFit: 'cover',
           zIndex: -1}}
-
         />
         <Carousel.Caption className='mb-5' style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', color:"white"}} >
-          <h1>Installation Raccordée</h1>
+          <h2>Installation Raccordée</h2>
           <p>
           Installation raccordée au réseau de 14 panneaux 550Wc
           </p>

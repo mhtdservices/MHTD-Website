@@ -31,7 +31,7 @@ export default function PrductDetails() {
         
     }
     const phoneNumber = '+212626425469';
-    const message = 'Bonjour! Je suis intéressé par le ' + title;
+    const message = "Bonjour! Je suis intéressé par l'article : "  + title;
     const encodedMessage = encodeURIComponent(message);
   
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

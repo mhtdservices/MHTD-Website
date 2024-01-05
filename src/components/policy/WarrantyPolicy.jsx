@@ -23,10 +23,10 @@ export default function WarrantyPolicy() {
                 À titre indicatif, Voici un aperçu de notre politique de garantie pour vous assurer une satisfaction totale : </p>
         <h2>Les panneaux solaires :</h2>
         <ol>
-            <li>Une garantie d'usin de 10 ans.</li>
+            <li>Une garantie d'usine de 10 ans.</li>
             <li>Une garantie performance de 25 ans.</li>
         </ol>
-        <h2> examples garantie d'usin :</h2>
+        <h2> examples garantie d'usine :</h2>
         <ul>
             <li><a href="https://www.jinkosolar.com/uploads/JinkoSolar-Global%20Limited%20Warranty%20(Rev112318)-EN.pdf" target="_blank" rel="noopener noreferrer">Jinko Solar</a></li>
             <li><a href="https://www.jasolar.com/uploadfile/2018/0518/20180518102313951.pdf" target="_blank" rel="noopener noreferrer">Ja Solar</a></li>
