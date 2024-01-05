@@ -1,6 +1,6 @@
 {
   "name": "mhtd-website",
-  "homepage": "https://mhtdservices.github.io/MHTD-Website",
+  "homepage": "https://mhtdservices.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
