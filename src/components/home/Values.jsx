@@ -1,76 +1,87 @@
-import { Container } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
-import goals from "../../images/background.jpg"
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import background from "../../images/background.jpg";
+import { FadeInUp, StaggerContainer, staggerChildVariants } from '../Animations';
+
+const valueMeta = {
+  1: { icon: "fa-solar-panel", color: "#F39C12" },
+  2: { icon: "fa-handshake-angle", color: "#0D3B66" },
+  3: { icon: "fa-leaf", color: "#27AE60" }
+};
 
 function ValuesSection() {
+  const { t } = useTranslation();
+  const rawItems = t('values.items', { returnObjects: true });
+  const items = Array.isArray(rawItems) ? rawItems : [];
 
-    const elements = [
-        'Primary',
-        'Success',
-        'Info',
-      ]
-  const values = [
-        {
-        id:1,
-        header:"Expertise",
-        title: "Expertise en Énergies Renouvelables",
-        discreption: "MHTD se distingue par son expertise dans le domaine des énergies renouvelables. Forte de nombreuses années d'expérience, l'entreprise offre des produits et services de haute qualité pour répondre aux besoins changeants du marché.",
-        color:'Primary',
-          },
-        {
-        id:2,
-        header:"Service",
-        title: "Service Client Exceptionnel",
-        discreption: "L'équipe de MHTD est prête à répondre aux besoins spécifiques de chaque client, assurant une expérience personnalisée à chaque étape, de la consultation initiale à l'installation et au service après-vente",
-        color:'Success',
-          },
-        {
-        id:3,
-        header:"Durabilité Environnementale",
-        title: "Engagement envers la Durabilité Environnementale",
-        discreption: "MHTD s'engage pleinement en faveur de la durabilité environnementale. Ses solutions, telles que les chauffe-eau solaires et autres produits, sont conçues pour minimiser l'impact écologique tout en offrant des avantages économiques à long terme.",
-        color:'Info',
-          },
-        ]
   return (
-    <>
-    <section id='values'>
-        <div 
-        className='text-white text-center d-flex flex-wrap justify-content-center align-items-center p-4 mt-3'  
+    <section id="values" className="position-relative py-5">
+      {/* Background with overlay */}
+      <div
+        className="position-absolute top-0 start-0 w-100 h-100"
         style={{
-                backgroundImage: `url(${goals})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                minHeight: '80vh', 
-            }}>
-        <h2 className="mt-3 color" >Énergie Solaire et de l'Arrosage Automatique</h2>
-        <p className="m-4 mt-3" >Bienvenue chez MHTD, votre partenaire de confiance dans le domaine de l'énergie solaire et de l'arrosage automatique au Maroc. 
-                Forts de notre engagement envers l'innovation durable, nous sommes fiers de proposer des solutions énergétiques modernes et 
-                des systèmes d'arrosage intelligents pour répondre aux besoins croissants de nos clients.
-        </p>
-        {values.map((variant) => (
-        <Card
-          bg={variant.color.toLowerCase()}
-          key={variant.id}
-          text={variant.color.toLowerCase() === 'light' ? 'dark' : 'white'}
-          style={{ width: '18rem' }}
-          className="m-5"
-        >
-          <Card.Header>{variant.title}</Card.Header>
-          <Card.Body>
-            {/* <Card.Title>{variant.title}</Card.Title> */}
-            <Card.Text>
-              {variant.discreption}
-            </Card.Text>
-          </Card.Body>
-        </Card>
+          backgroundImage: `url(${background})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'brightness(0.35)',
+          zIndex: 0,
+        }}
+      />
 
-      ))}
-        </div>
-      </section>
+      <Container className="position-relative py-4" style={{ zIndex: 1 }}>
+        <FadeInUp className="text-center text-white mb-5">
+          <span
+            className="badge px-3 py-2 mb-3 text-uppercase"
+            style={{ backgroundColor: 'rgba(243, 156, 18, 0.9)', letterSpacing: '0.5px' }}
+          >
+            {t('values.badge')}
+          </span>
+          <h2 className="fw-bold display-6 mb-3">{t('values.title')}</h2>
+          <p className="lead mx-auto text-white-50" style={{ maxWidth: '720px', fontSize: '1.05rem' }}>
+            {t('values.desc')}
+          </p>
+        </FadeInUp>
 
-    </>
+        <StaggerContainer>
+          <Row className="g-4">
+            {items.map((v) => {
+              const meta = valueMeta[v.id] || { icon: "fa-solar-panel", color: "#F39C12" };
+              return (
+                <Col key={v.id} lg={4} md={6}>
+                  <motion.div variants={staggerChildVariants} className="h-100">
+                    <Card className="h-100 border-0 rounded-4 shadow bg-white p-4 text-center card-hover-lift">
+                      <div
+                        className="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle"
+                        style={{
+                          width: '70px',
+                          height: '70px',
+                          backgroundColor: `${meta.color}15`,
+                          color: meta.color,
+                        }}
+                      >
+                        <i className={`fas ${meta.icon} fa-2x`}></i>
+                      </div>
+                      <Card.Body className="p-0 d-flex flex-column">
+                        <span className="text-uppercase fw-bold small mb-2" style={{ color: meta.color, letterSpacing: '0.5px' }}>
+                          {v.header}
+                        </span>
+                        <Card.Title className="fw-bold mb-3" style={{ color: '#0D3B66', fontSize: '1.2rem' }}>
+                          {v.title}
+                        </Card.Title>
+                        <Card.Text className="text-muted small mb-0" style={{ lineHeight: '1.7' }}>
+                          {v.desc}
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </motion.div>
+                </Col>
+              );
+            })}
+          </Row>
+        </StaggerContainer>
+      </Container>
+    </section>
   );
 }
 

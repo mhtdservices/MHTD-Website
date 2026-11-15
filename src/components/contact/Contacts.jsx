@@ -1,40 +1,64 @@
-import { Container } from "react-bootstrap";
-import contactImage from "../../images/contactImage.jpg"
+import { Container, Row, Col } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import contactImage from "../../images/contactImage.jpg";
 import Steps from "./Steps";
 import ContactForm from "./ContactForm";
 import WorkDetails from "./Workdetails";
-
-
+import { FadeInUp, FadeInLeft, FadeInRight } from "../Animations";
 
 export default function Contact() {
+  const { t } = useTranslation();
 
-    return(
-        <>
-        <div className="d-flex flex-column justify-content-center p-4 mt-3"
+  return (
+    <>
+      {/* Hero Banner */}
+      <div
+        className="contact-hero d-flex flex-column justify-content-center align-items-center text-center p-4 position-relative"
         style={{
-            backgroundImage: `url(${contactImage})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            minHeight: '80vh', 
-        }}>
-            <h2 className="text-white mt-3"  ><span style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>CONSULTATION GRATUITE !l</span></h2>
-            <h3 className="text-white mt-3"  ><span style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', textTransform:"uppercase"}}>N'hésitez pas à nous contacte.</span></h3>
-            
+          backgroundImage: `url(${contactImage})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          minHeight: "45vh",
+        }}
+      >
+        <div
+          className="position-absolute top-0 start-0 w-100 h-100"
+          style={{ backgroundColor: "rgba(13, 59, 102, 0.72)" }}
+        />
 
-        </div>
-        <Container className=" text-center p-4">
-            <h1>Bénéficiez de notre expertise</h1>
-            <p>Notre équipe dédiée est prête à vous accompagner à chaque étape, de la conception à la réalisation.</p>
-            <p> Faisons de votre vision une réalité durable ensemble.</p>
-        </Container>
-        <Container className="d-flex flex-wrap justify-content-around text-center text-lg-start p-4" >
-            <Steps/>
-            <ContactForm />
-        </Container>
-        <WorkDetails/>
-        </>
-        
-    )
-    
+        <FadeInUp className="position-relative text-white py-4" style={{ zIndex: 1, maxWidth: "750px" }}>
+          <span
+            className="badge px-3 py-2 mb-3 text-uppercase"
+            style={{ backgroundColor: "#F39C12", letterSpacing: "0.5px" }}
+          >
+            {t('contact.heroBadge')}
+          </span>
+          <h1 className="fw-bold display-6 mb-3">{t('contact.heroTitle')}</h1>
+          <p className="lead mb-0 text-white-50" style={{ fontSize: "1.1rem" }}>
+            {t('contact.heroDesc')}
+          </p>
+        </FadeInUp>
+      </div>
+
+      {/* Main 2-Column Section */}
+      <Container className="py-5">
+        <Row className="g-5 align-items-start">
+          <Col lg={6}>
+            <FadeInLeft>
+              <Steps />
+            </FadeInLeft>
+          </Col>
+          <Col lg={6}>
+            <FadeInRight>
+              <ContactForm />
+            </FadeInRight>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* Work Details & Map Section */}
+      <WorkDetails />
+    </>
+  );
 }

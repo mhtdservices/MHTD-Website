@@ -1,60 +1,119 @@
-import Button from "react-bootstrap/Button";
-import { useParams } from "react-router-dom";
+import { Container, Row, Col, Card, Breadcrumb } from 'react-bootstrap';
+import { useParams, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { productsData } from '../../data';
+import { FadeInUp } from '../Animations';
 
+export default function ProductDetails() {
+  const { id } = useParams();
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language === 'ar';
+  const product = productsData.find((item) => String(item.id) === String(id));
+  const phoneNumber = '212626425469';
 
+  if (!product) {
+    return (
+      <Container className="py-5 text-center my-5">
+        <FadeInUp className="p-5 bg-light rounded-4 shadow-sm mx-auto" style={{ maxWidth: '500px' }}>
+          <i className="fas fa-box-open fa-3x text-muted mb-3"></i>
+          <h2 className="fw-bold mb-3" style={{ color: '#0D3B66' }}>{t('products.notFoundTitle')}</h2>
+          <p className="text-muted mb-4">{t('products.notFoundDesc')}</p>
+          <Link to="/" className="btn btn-solar px-4 py-2">
+            {t('products.btnBack')}
+          </Link>
+        </FadeInUp>
+      </Container>
+    );
+  }
 
-export default function PrductDetails() {
-    
+  const title = isAr ? (product.title_ar || product.title) : product.title;
+  const description = isAr ? (product.discreption_ar || product.discreption) : product.discreption;
+  const features = isAr ? (product.featrues_ar || product.featrues) : product.featrues;
 
-    const params = useParams()
-    console.log(params)
-    let id ;
-    let title;
-    let discreption;
-    let featrues;
-    let imgurl;
-    for (let index = 0; index < productsData.length; index++) {
-        const element = productsData[index];
-        // console.log(element)
-        id = element.id;
-        if (params.id == id) {
-            
-            title = element.title;
-            discreption = element.discreption;
-            featrues = element.featrues;
-            imgurl = element.imgurl;
-            
-        }
-        console.log("element not found")
-        
-        
-    }
-    const phoneNumber = '+212626425469';
-    const message = "Bonjour! Je suis intéressé par l'article : "  + title;
-    const encodedMessage = encodeURIComponent(message);
-  
-    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  const message = isAr
+    ? `السلام عليكم شركة MHTD، أنا مهتم بالمنتج: ${title}. هل يمكن تزويدي بالمزيد من التفاصيل وسعر التوريد والتركيب؟`
+    : `Bonjour MHTD ! Je suis intéressé par l'article : ${title}. Pouvez-vous me donner plus de détails et son prix ?`;
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-    return(
-        <>
+  return (
+    <section className="py-5" style={{ backgroundColor: '#F8FAFC' }}>
+      <Container>
+        <Breadcrumb className="mb-4">
+          <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/' }}>
+            {t('nav.home')}
+          </Breadcrumb.Item>
+          <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/#products' }}>
+            {t('nav.shop')}
+          </Breadcrumb.Item>
+          <Breadcrumb.Item active className="text-capitalize">
+            {title}
+          </Breadcrumb.Item>
+        </Breadcrumb>
 
-        <div className="d-flex flex-wrap mt-5">
-    <div className='mt-3 mb-2 col-md-4 mx-auto text-center'>
-    <h2 className='mt-3'>{title}</h2>
-    <p className='mt-3'>{discreption}</p>
-    <p className='mt-3'>{featrues}</p>
-    <Button className='mt-3' variant="primary" onClick={() => window.open(whatsappLink, '_blank')}>Obtenir</Button>
-    </div>
+        <FadeInUp>
+          <Card className="border-0 shadow-sm rounded-4 overflow-hidden bg-white p-3 p-md-4">
+            <Row className="g-4 align-items-center">
+              <Col lg={6}>
+                <div
+                  className="d-flex align-items-center justify-content-center p-4 rounded-4"
+                  style={{ backgroundColor: '#F1F5F9', minHeight: '380px' }}
+                >
+                  <img
+                    src={product.imgurl}
+                    alt={title}
+                    className="img-fluid"
+                    style={{ maxHeight: '340px', objectFit: 'contain' }}
+                  />
+                </div>
+              </Col>
 
-        <img
-            className="d-block w-100 image-fluid col-md-6 ms-auto me-0"
-            src={imgurl}
-            style={{ maxWidth: '600px', maxHeight: '400px' }}
-            alt="Second slide"
-        />
-    </div>
+              <Col lg={6}>
+                <div className={isAr ? "pe-lg-3" : "ps-lg-3"}>
+                  <span className="section-badge mb-2">{t('products.badge')}</span>
+                  <h1 className="fw-bold mb-3 text-capitalize" style={{ color: '#0D3B66' }}>
+                    {title}
+                  </h1>
 
-        </>
-    )
+                  <p className="lead text-muted mb-4" style={{ fontSize: '1.05rem', lineHeight: '1.7' }}>
+                    {description}
+                  </p>
+
+                  <div
+                    className="p-3 rounded-3 mb-4"
+                    style={{
+                      backgroundColor: '#F8FAFC',
+                      borderInlineStart: '4px solid #F39C12'
+                    }}
+                  >
+                    <h6 className="fw-bold mb-2" style={{ color: '#0D3B66' }}>
+                      <i className={`fas fa-list-check ${isAr ? 'ms-2' : 'me-2'}`} style={{ color: '#F39C12' }}></i>
+                      {t('products.featuresHeader')}
+                    </h6>
+                    <p className="text-muted small mb-0" style={{ lineHeight: '1.6' }}>
+                      {features}
+                    </p>
+                  </div>
+
+                  <div className="d-flex flex-wrap gap-3 pt-2">
+                    <a
+                      href={whatsappLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-whatsapp px-4 py-2"
+                    >
+                      <i className="fab fa-whatsapp fa-lg"></i> {t('products.whatsappOrder')}
+                    </a>
+
+                    <Link to="/#products" className="btn btn-outline-secondary px-4 py-2" style={{ borderRadius: '30px' }}>
+                      <i className={`fas fa-arrow-${isAr ? 'right' : 'left'} ${isAr ? 'ms-1' : 'me-1'}`}></i> {t('products.btnBackShop')}
+                    </Link>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Card>
+        </FadeInUp>
+      </Container>
+    </section>
+  );
 }

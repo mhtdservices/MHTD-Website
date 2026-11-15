@@ -1,51 +1,189 @@
-import { Container } from "react-bootstrap";
-import warranty from "../../images/warranty.jpg"
-
+import { Container, Row, Col, Card, Breadcrumb } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import warranty from "../../images/warranty.jpg";
+import { FadeInUp, ScaleIn } from "../Animations";
 
 export default function WarrantyPolicy() {
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language === 'ar';
+  const phoneNumber = "212626425469";
 
-    return(
-        <>
+  const warrantyMsg = isAr
+    ? "السلام عليكم شركة MHTD، لدي استفسار بخصوص ضمان المعدات والتجهيزات."
+    : "Bonjour MHTD, j'ai une question concernant la garantie de mes équipements.";
+
+  return (
+    <>
+      {/* Hero Banner */}
+      <div
+        className="contact-hero d-flex flex-column justify-content-center align-items-center text-center p-4 position-relative"
+        style={{
+          backgroundImage: `url(${warranty})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          minHeight: "45vh",
+        }}
+      >
         <div
-            style={{
-                backgroundImage: `url(${warranty})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                minHeight: '80vh', 
-            }}>            
-        </div>
-    <Container>
-        <h1>Politique de Garantie:</h1>
-        <p>Chez MHTD, notre objectif principal est d'assurer que votre expérience d'achat soit entièrement satisfaisante. 
-                C'est pourquoi la majorité de nos produits bénéficient de garanties. </p>
-        <p>Les conditions de garantie sont spécifiées dans le devis estimatif, il varie en fonction du fabricant et du type de produit. 
-                À titre indicatif, Voici un aperçu de notre politique de garantie pour vous assurer une satisfaction totale : </p>
-        <h2>Les panneaux solaires :</h2>
-        <ol>
-            <li>Une garantie d'usine de 10 ans.</li>
-            <li>Une garantie performance de 25 ans.</li>
-        </ol>
-        <h2> examples garantie d'usine :</h2>
-        <ul>
-            <li><a href="https://www.jinkosolar.com/uploads/JinkoSolar-Global%20Limited%20Warranty%20(Rev112318)-EN.pdf" target="_blank" rel="noopener noreferrer">Jinko Solar</a></li>
-            <li><a href="https://www.jasolar.com/uploadfile/2018/0518/20180518102313951.pdf" target="_blank" rel="noopener noreferrer">Ja Solar</a></li>
-        </ul>
+          className="position-absolute top-0 start-0 w-100 h-100"
+          style={{ backgroundColor: "rgba(13, 59, 102, 0.75)" }}
+        />
 
-        <h2>Onduleurs solaires :</h2>
-        <p>1 ans de garantie.</p>
+        <FadeInUp className="position-relative text-white py-4" style={{ zIndex: 1, maxWidth: "750px" }}>
+          <span
+            className="badge px-3 py-2 mb-3 text-uppercase"
+            style={{ backgroundColor: "#F39C12", letterSpacing: "0.5px" }}
+          >
+            {t('warranty.badge')}
+          </span>
+          <h1 className="fw-bold display-6 mb-3">{t('warranty.title')}</h1>
+          <p className="lead mb-0 text-white-50" style={{ fontSize: "1.1rem" }}>
+            {t('warranty.desc')}
+          </p>
+        </FadeInUp>
+      </div>
 
-        <h2>Date du début de la garantie</h2>
-        <p>
-            C'est la date d'installation du/des produit(s) ou 1 mois après la livraison du/des produit(s) à l'acheteur.
-        </p>
-        <h2>Modifications de la Politique de Garantie</h2>
-        <p>MHTD se réserve le droit de modifier cette politique de garantie à tout moment. 
-            Toute modification sera publiée sur notre site web avec indication de la date d'effet.</p>            
-        </Container>
- 
-        </>
- 
-    )
-    
+      <Container className="py-5" id="warrantyPolicy">
+        <Breadcrumb className="mb-4">
+          <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
+            {t('nav.home')}
+          </Breadcrumb.Item>
+          <Breadcrumb.Item active>{t('warranty.title')}</Breadcrumb.Item>
+        </Breadcrumb>
+
+        <FadeInUp className="mb-5">
+          <p className="lead text-dark" style={{ lineHeight: "1.8" }}>
+            {t('warranty.intro1')}
+          </p>
+          <p className="text-muted">
+            {t('warranty.intro2')}
+          </p>
+        </FadeInUp>
+
+        <Row className="g-4 mb-5">
+          {/* Panneaux Solaires */}
+          <Col md={6}>
+            <ScaleIn delay={0.1} className="h-100">
+              <Card className="h-100 border-0 shadow-sm rounded-4 p-4 card-hover-lift bg-white">
+                <div className="d-flex align-items-center mb-3">
+                  <div
+                    className={`rounded-circle d-flex align-items-center justify-content-center ${isAr ? 'ms-3' : 'me-3'}`}
+                    style={{ width: "50px", height: "50px", backgroundColor: "rgba(243, 156, 18, 0.15)", color: "#F39C12", flexShrink: 0 }}
+                  >
+                    <i className="fas fa-solar-panel fa-lg"></i>
+                  </div>
+                  <div>
+                    <span className="section-badge mb-1" style={{ fontSize: "0.7rem" }}>{t('warranty.solarBadge')}</span>
+                    <h4 className="fw-bold mb-0" style={{ color: "#0D3B66" }}>{t('warranty.solarTitle')}</h4>
+                  </div>
+                </div>
+
+                <ul className="list-unstyled mb-4">
+                  <li className="d-flex align-items-start mb-2">
+                    <i className={`fas fa-check-circle text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+                    <span>{t('warranty.solarG1')}</span>
+                  </li>
+                  <li className="d-flex align-items-start mb-2">
+                    <i className={`fas fa-check-circle text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+                    <span>{t('warranty.solarG2')}</span>
+                  </li>
+                </ul>
+
+                <div className="pt-3 border-top mt-auto">
+                  <small className="text-muted d-block mb-2 fw-semibold">{t('warranty.certLabel')}</small>
+                  <div className="d-flex flex-wrap gap-2">
+                    <a
+                      href="https://www.jinkosolar.com/uploads/JinkoSolar-Global%20Limited%20Warranty%20(Rev112318)-EN.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-outline-primary btn-sm rounded-pill"
+                    >
+                      <i className={`fas fa-file-pdf ${isAr ? 'ms-1' : 'me-1'} text-danger`}></i> {t('warranty.jinkoBtn')}
+                    </a>
+                    <a
+                      href="https://www.jasolar.com/uploadfile/2018/0518/20180518102313951.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-outline-primary btn-sm rounded-pill"
+                    >
+                      <i className={`fas fa-file-pdf ${isAr ? 'ms-1' : 'me-1'} text-danger`}></i> {t('warranty.jaBtn')}
+                    </a>
+                  </div>
+                </div>
+              </Card>
+            </ScaleIn>
+          </Col>
+
+          {/* Onduleurs & Pompage */}
+          <Col md={6}>
+            <ScaleIn delay={0.2} className="h-100">
+              <Card className="h-100 border-0 shadow-sm rounded-4 p-4 card-hover-lift bg-white">
+                <div className="d-flex align-items-center mb-3">
+                  <div
+                    className={`rounded-circle d-flex align-items-center justify-content-center ${isAr ? 'ms-3' : 'me-3'}`}
+                    style={{ width: "50px", height: "50px", backgroundColor: "rgba(13, 59, 102, 0.15)", color: "#0D3B66", flexShrink: 0 }}
+                  >
+                    <i className="fas fa-microchip fa-lg"></i>
+                  </div>
+                  <div>
+                    <span className="section-badge mb-1" style={{ fontSize: "0.7rem" }}>{t('warranty.inverterBadge')}</span>
+                    <h4 className="fw-bold mb-0" style={{ color: "#0D3B66" }}>{t('warranty.inverterTitle')}</h4>
+                  </div>
+                </div>
+
+                <ul className="list-unstyled mb-4">
+                  <li className="d-flex align-items-start mb-2">
+                    <i className={`fas fa-check-circle text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+                    <span>{t('warranty.inverterG1')}</span>
+                  </li>
+                  <li className="d-flex align-items-start mb-2">
+                    <i className={`fas fa-check-circle text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+                    <span>{t('warranty.inverterG2')}</span>
+                  </li>
+                  <li className="d-flex align-items-start mb-2">
+                    <i className={`fas fa-check-circle text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+                    <span>{t('warranty.inverterG3')}</span>
+                  </li>
+                </ul>
+
+                <div className="p-3 rounded-3 mt-auto" style={{ backgroundColor: "#F8FAFC" }}>
+                  <small className="text-muted">
+                    <i className={`fas fa-info-circle text-primary ${isAr ? 'ms-1' : 'me-1'}`}></i>
+                    {t('warranty.claimNotice')}
+                  </small>
+                </div>
+              </Card>
+            </ScaleIn>
+          </Col>
+        </Row>
+
+        {/* WhatsApp Support Callout */}
+        <FadeInUp>
+          <Card
+            className="border-0 shadow-sm rounded-4 p-4 text-center bg-white"
+            style={{ borderInlineStart: "5px solid #F39C12" }}
+          >
+            <h5 className="fw-bold mb-2" style={{ color: "#0D3B66" }}>
+              {t('warranty.helpTitle')}
+            </h5>
+            <p className="text-muted small mb-3">
+              {t('warranty.helpDesc')}
+            </p>
+            <div>
+              <a
+                href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(warrantyMsg)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp px-4 py-2"
+              >
+                <i className={`fab fa-whatsapp ${isAr ? 'ms-1' : 'me-1'}`}></i> {t('warranty.helpBtn')}
+              </a>
+            </div>
+          </Card>
+        </FadeInUp>
+      </Container>
+    </>
+  );
 }

@@ -1,42 +1,56 @@
 import { Container } from "react-bootstrap";
-import whatsapp from "../images/whatsapp.png";
-import phoneIcon from "../images/telephone.png";
+import { useTranslation } from "react-i18next";
 import '../App.css';
 
 export default function Header() {
-  const phoneNumber = '+212626425469';
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language === 'ar';
+  const phoneNumber = '212626425469';
+
+  const whatsappMsg = isAr
+    ? "السلام عليكم شركة MHTD، أود الاستفسار عن خدماتكم أو طلب عرض أسعار."
+    : "Bonjour MHTD, je souhaite un renseignement ou un devis.";
 
   return (
-    <Container className="d-flex justify-content-between"
-     >
-      <a
-        href={`tel:${phoneNumber}`}
-        style={{
-          textDecoration: 'none',
-          color: 'inherit',
-        }}>
-        <img src={phoneIcon} alt="phoneIcon" />
-        {phoneNumber}
-      </a>
+    <>
+      {/* Top Bar */}
+      <div className="py-2 text-white small bg-gradient-topbar">
+        <Container className="d-flex flex-wrap justify-content-between align-items-center">
+          <div className="d-flex align-items-center gap-3">
+            <a href="tel:+212626425469" className="text-white text-decoration-none d-flex align-items-center gap-1" dir="ltr">
+              <i className="fas fa-phone-alt" style={{ color: "#F39C12" }}></i>
+              <span>+212 626425469</span>
+            </a>
+            <span className="text-white-50 d-none d-sm-inline">|</span>
+            <a href="mailto:mhtdservices@gmail.com" className="text-white text-decoration-none d-none d-sm-flex align-items-center gap-1" dir="ltr">
+              <i className="fas fa-envelope" style={{ color: "#F39C12" }}></i>
+              <span>mhtdservices@gmail.com</span>
+            </a>
+          </div>
 
+          <div className="d-flex align-items-center gap-2">
+            <span className="text-white-50 d-none d-md-inline">
+              <i className={`fas fa-location-dot ${isAr ? 'ms-1' : 'me-1'}`} style={{ color: "#F39C12" }}></i>
+              {t('topbar.location')}
+            </span>
+            <span className="badge px-2 py-1" style={{ backgroundColor: "rgba(243, 156, 18, 0.2)", color: "#F39C12", border: "1px solid #F39C12" }}>
+              {t('topbar.freeQuote')}
+            </span>
+          </div>
+        </Container>
+      </div>
+
+      {/* Floating WhatsApp Quick Action Button */}
       <a
-        href={`https://wa.me/${phoneNumber}`}
-        style={{
-          textDecoration: 'none',
-          color: 'inherit',
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
-          padding: '10px',
-          borderRadius: '5px',
-          cursor: 'pointer',
-          zIndex: 1,
-          animation: 'bounce 1.5s infinite',
-        }}
+        href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMsg)}`}
+        className="floating-whatsapp-btn"
         target="_blank"
+        rel="noopener noreferrer"
+        aria-label={t('topbar.whatsappFloating')}
       >
-        <img src={whatsapp} alt="whatsapp" />
+        <i className="fab fa-whatsapp fa-xl"></i>
+        <span>{t('topbar.whatsappFloating')}</span>
       </a>
-    </Container>
+    </>
   );
 }

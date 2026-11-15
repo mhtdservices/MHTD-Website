@@ -1,63 +1,102 @@
 import Carousel from 'react-bootstrap/Carousel';
-import agricole from "../../images/agricole.jpg";
-import arrosage from "../../images/arrosage.jpg";
-import ongrid from "../../images/ongrid.jpg";
+import { HashLink } from 'react-router-hash-link';
+import { useTranslation } from 'react-i18next';
+import agricole from '../../images/agricole.jpg';
+import arrosage from '../../images/arrosage.jpg';
+import ongrid from '../../images/ongrid.jpg';
 
 function Slider() {
-  return (
-    <section id='slider'>
+  const { t } = useTranslation();
+  const phoneNumber = '212626425469';
 
-    <Carousel data-bs-theme="dark"
-    style={{ height: '100vh',
-    zIndex: -1 }}>
-      <Carousel.Item>
-        <img
-          className="d-block w-100 image-fluid"
-          src={agricole} 
-          alt="Pompage solaire"
-          style={{ height: '100vh',
-          objectFit: 'cover',
-          zIndex: -1 }}
-        />
-        <Carousel.Caption className='mb-5' style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', color:"white"}} >
-          <h2>Pompage Solaire</h2>
-          <p>Installation d'un système rotatif de 10 panneaux de 400Wc</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100 image-fluid"
-          src={arrosage} 
-          alt="arrosage"
-          style={{ height: '100vh',
-          objectFit: 'cover',
-          zIndex: -1 }}
-        />
-        <Carousel.Caption className='mb-5' style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', color:"white"}} >
-          <h2>Arrosage Automatique</h2>
-          <p>Installation de systeme d'arrosage automatique</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100 image-fluid"
-          src={ongrid}
-          alt="Third slide"
-          style={{ height: '100vh' ,
-          objectFit: 'cover',
-          zIndex: -1}}
-        />
-        <Carousel.Caption className='mb-5' style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', color:"white"}} >
-          <h2>Installation Raccordée</h2>
-          <p>
-          Installation raccordée au réseau de 14 panneaux 550Wc
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+  const slides = [
+    {
+      img: agricole,
+      badge: t('slider.slide1.badge'),
+      title: t('slider.slide1.title'),
+      desc: t('slider.slide1.desc'),
+      whatsappMsg: t('slider.slide1.whatsappMsg'),
+    },
+    {
+      img: arrosage,
+      badge: t('slider.slide2.badge'),
+      title: t('slider.slide2.title'),
+      desc: t('slider.slide2.desc'),
+      whatsappMsg: t('slider.slide2.whatsappMsg'),
+    },
+    {
+      img: ongrid,
+      badge: t('slider.slide3.badge'),
+      title: t('slider.slide3.title'),
+      desc: t('slider.slide3.desc'),
+      whatsappMsg: t('slider.slide3.whatsappMsg'),
+    },
+  ];
+
+  return (
+    <section id="slider" className="position-relative">
+      <Carousel interval={5000} pause="hover" indicators={true}>
+        {slides.map((slide, idx) => (
+          <Carousel.Item key={idx}>
+            <div className="position-relative" style={{ height: '85vh', minHeight: '560px' }}>
+              <img
+                className="d-block w-100 h-100"
+                src={slide.img}
+                alt={slide.title}
+                style={{ objectFit: 'cover' }}
+              />
+              {/* Subtle dark gradient overlay */}
+              <div
+                className="position-absolute top-0 start-0 w-100 h-100"
+                style={{
+                  background:
+                    'linear-gradient(180deg, rgba(13, 59, 102, 0.45) 0%, rgba(13, 59, 102, 0.75) 100%)',
+                }}
+              />
+            </div>
+
+            <Carousel.Caption className="d-flex align-items-center justify-content-center">
+              <div className="glass-hero-card text-center text-white">
+                <span
+                  className="badge mb-3 px-3 py-2 text-uppercase"
+                  style={{
+                    backgroundColor: 'rgba(243, 156, 18, 0.9)',
+                    color: '#FFFFFF',
+                    fontSize: '0.85rem',
+                    letterSpacing: '0.5px',
+                  }}
+                >
+                  {slide.badge}
+                </span>
+
+                <h1 className="fw-bold mb-3 display-6 display-md-5">{slide.title}</h1>
+
+                <p className="lead mb-4 mx-auto" style={{ maxWidth: '620px', fontSize: '1.05rem', opacity: 0.95 }}>
+                  {slide.desc}
+                </p>
+
+                <div className="d-flex flex-wrap justify-content-center gap-3">
+                  <a
+                    href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(slide.whatsappMsg)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-whatsapp px-4 py-2"
+                  >
+                    <i className="fab fa-whatsapp fa-lg"></i>
+                    {t('slider.ctaWhatsapp')}
+                  </a>
+
+                  <HashLink smooth to="/#solutions" className="btn-navy-outline px-4 py-2">
+                    {t('slider.ctaSolutions')}
+                  </HashLink>
+                </div>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </section>
   );
-
 }
 
 export default Slider;
