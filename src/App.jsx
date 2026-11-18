@@ -42,11 +42,6 @@ function App() {
 
   return (
     <>
-      {/* Accessibility: skip-to-content link */}
-      <a href="#main-content" className="skip-to-content">
-        Aller au contenu principal
-      </a>
-
       <Header />
       <NavBar />
 
@@ -82,6 +77,15 @@ function App() {
               element={
                 <AnimatedPage>
                   <ProductDetails />
+                </AnimatedPage>
+              }
+            />
+            {/* Fallback to Home for any unknown route or anchor hash */}
+            <Route
+              path="*"
+              element={
+                <AnimatedPage>
+                  <Home />
                 </AnimatedPage>
               }
             />

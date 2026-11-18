@@ -660,25 +660,6 @@ a:focus-visible, button:focus-visible {
   box-shadow: 0 4px 12px rgba(243, 156, 18, 0.35);
 }
 
-/* ── Skip to Content (Accessibility) ── */
-
-.skip-to-content {
-  position: absolute;
-  left: -999px;
-  top: 4px;
-  z-index: 9999;
-  padding: 8px 16px;
-  background: var(--brand-navy);
-  color: #FFFFFF;
-  border-radius: 4px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.skip-to-content:focus {
-  left: 8px;
-}
-
 /* ── Mobile Hamburger Button ── */
 .mobile-hamburger-btn {
   background: rgba(13, 59, 102, 0.06);
