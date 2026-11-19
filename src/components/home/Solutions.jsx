@@ -2,12 +2,12 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { FadeInUp, StaggerContainer, staggerChildVariants } from "../Animations";
-import pompageSolaire from "../../images/pomageSolaire.jpg";
-import chauffeEauSolaire from "../../images/chauffeeausolaire.jpg";
-import energisSolaire from "../../images/energisSolaire.jpg";
-import arrosageAutomatique from "../../images/arrosageAutomatique2.jpg";
-import injectionReseau from "../../images/injectionReseau.jpg";
-import hybride from "../../images/hybride.jpg";
+import pompageSolaire from "../../images/pomageSolaire.png";
+import chauffeEauSolaire from "../../images/chauffeeausolaire.png";
+import energisSolaire from "../../images/energisSolaire.png";
+import arrosageAutomatique from "../../images/arrosageAutomatique.png";
+import injectionReseau from "../../images/injectionReseau.png";
+import hybride from "../../images/hybride.png";
 import { HashLink } from "react-router-hash-link";
 
 const solutionImages = {

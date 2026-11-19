@@ -11,6 +11,7 @@ export default function ContactForm() {
   const location = useLocation();
   const [selectedSolution, setSelectedSolution] = useState("Nos Solutions");
   const [status, setStatus] = useState({ loading: false, success: null, message: "" });
+  const [lastSubmittedData, setLastSubmittedData] = useState(null);
 
   // Pre-fill solution dropdown if passed via query params (e.g. ?solution=Pompage Solaire)
   useEffect(() => {
@@ -24,6 +25,16 @@ export default function ContactForm() {
   const sendEmail = (e) => {
     e.preventDefault();
     setStatus({ loading: true, success: null, message: "" });
+
+    // Snapshot form data for fallback in case of delivery failure
+    const currentFormData = {
+      name: form.current?.name?.value || "",
+      email: form.current?.email?.value || "",
+      number: form.current?.number?.value || "",
+      subject: form.current?.subject?.value || selectedSolution,
+      message: form.current?.message?.value || ""
+    };
+    setLastSubmittedData(currentFormData);
 
     // EmailJS credentials
     const serviceId = "service_30shd0a";
@@ -41,7 +52,8 @@ export default function ContactForm() {
           });
           form.current.reset();
         },
-        () => {
+        (error) => {
+          console.error("EmailJS delivery error:", error);
           setStatus({
             loading: false,
             success: false,
@@ -69,8 +81,30 @@ export default function ContactForm() {
           onClose={() => setStatus({ ...status, message: "" })}
           className="rounded-3"
         >
-          <i className={`fas ${status.success ? "fa-circle-check" : "fa-triangle-exclamation"} ${isAr ? 'ms-2' : 'me-2'}`}></i>
-          {status.message}
+          <div className="d-flex align-items-start">
+            <i className={`fas ${status.success ? "fa-circle-check" : "fa-triangle-exclamation"} ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+            <div className="flex-grow-1">
+              <div>{status.message}</div>
+              {!status.success && lastSubmittedData && (
+                <div className="mt-3">
+                  <a
+                    href={`https://wa.me/212626425469?text=${encodeURIComponent(
+                      isAr
+                        ? `طلب عرض سعر MHTD:\n- الاسم: ${lastSubmittedData.name}\n- الهاتف: ${lastSubmittedData.number}\n- البريد: ${lastSubmittedData.email}\n- الخدمة: ${lastSubmittedData.subject}\n- التفاصيل: ${lastSubmittedData.message || 'لا توجد'}`
+                        : `Demande de Devis MHTD:\n- Nom: ${lastSubmittedData.name}\n- Tél: ${lastSubmittedData.number}\n- Email: ${lastSubmittedData.email}\n- Solution: ${lastSubmittedData.subject}\n- Message: ${lastSubmittedData.message || 'Aucun'}`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-success btn-sm d-inline-flex align-items-center gap-2 fw-semibold px-3 py-2 shadow-sm"
+                    style={{ backgroundColor: '#25D366', borderColor: '#25D366', borderRadius: '20px' }}
+                  >
+                    <i className="fab fa-whatsapp fa-lg"></i>
+                    <span>{isAr ? "إرسال هذا الطلب عبر واتساب الآن" : "Envoyer cette demande sur WhatsApp en 1 clic"}</span>
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
         </Alert>
       )}
 

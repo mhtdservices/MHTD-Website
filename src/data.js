@@ -4,7 +4,7 @@ import onduleur from "./images/onduleur.png";
 import accessoires from "./images/accessoires.png";
 import coffret from "./images/coffret1.png";
 import eclairageSolaire from "./images/eclairage-solaire.png";
-import pompes from "./images/pompe.jpg";
+import pompes from "./images/pompe.png";
 
 export const productsData = [
   {

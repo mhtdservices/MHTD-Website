@@ -1059,3 +1059,91 @@ a:focus-visible, button:focus-visible {
     display: none !important;
   }
 }
+
+/* ── Material Tailwind Boutique Ecommerce Cards (Equal Width & Height) ── */
+.ecommerce-product-card {
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  background-color: #ffffff !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 20px rgba(13, 59, 102, 0.06) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  overflow: hidden !important;
+}
+
+.ecommerce-product-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 32px rgba(13, 59, 102, 0.12) !important;
+}
+
+.ecommerce-card-header {
+  height: 220px !important;
+  min-height: 220px !important;
+  max-height: 220px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background-color: #F8FAFC !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1rem !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.ecommerce-card-img {
+  max-height: 180px !important;
+  max-width: 88% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  transition: transform 0.3s ease !important;
+}
+
+.ecommerce-product-card:hover .ecommerce-card-img {
+  transform: scale(1.06) !important;
+}
+
+.ecommerce-card-body {
+  padding: 1.25rem 1.25rem 0.75rem 1.25rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+.ecommerce-card-title {
+  min-height: 3.25rem !important;
+  display: flex !important;
+  align-items: center !important;
+  color: #0D3B66 !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.35 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.ecommerce-card-desc {
+  min-height: 4.5rem !important;
+  font-size: 0.875rem !important;
+  color: #64748B !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0.5rem !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+.ecommerce-card-footer {
+  margin-top: auto !important;
+  padding: 0 1.25rem 1.25rem 1.25rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+  width: 100% !important;
+}
