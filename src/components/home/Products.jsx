@@ -56,8 +56,11 @@ export default function Products() {
                             objectFit: 'contain',
                             maxHeight: '135px',
                             maxWidth: '88%',
-                            padding: '6px'
+                            padding: '6px',
+                            aspectRatio: '300/155'
                           }}
+                          width="300"
+                          height="155"
                           loading="lazy"
                         />
                       </div>

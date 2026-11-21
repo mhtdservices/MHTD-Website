@@ -27,7 +27,10 @@ export default function WorkDetails() {
                 src={workTime}
                 alt="Horaires de travail MHTD"
                 className="w-100"
-                style={{ height: "200px", objectFit: "cover" }}
+                width="400"
+                height="200"
+                style={{ height: "200px", objectFit: "cover", aspectRatio: "400/200" }}
+                loading="lazy"
               />
               <Card.Body className="p-4 d-flex flex-column justify-content-between">
                 <div>

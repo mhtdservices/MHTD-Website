@@ -165,6 +165,7 @@ ${currentFormData.message || "Aucune note complémentaire."}
             type="text"
             placeholder={isAr ? "مثال: محمد العلمي" : "Ex : Mohamed El Alami"}
             required
+            autoComplete="name"
             className="py-2 rounded-3"
           />
         </Form.Group>
@@ -178,6 +179,7 @@ ${currentFormData.message || "Aucune note complémentaire."}
             type="email"
             placeholder="Ex : contact@domaine.ma"
             required
+            autoComplete="email"
             className="py-2 rounded-3"
           />
         </Form.Group>
@@ -191,6 +193,7 @@ ${currentFormData.message || "Aucune note complémentaire."}
             type="tel"
             placeholder={isAr ? "مثال: 06XX XX XX XX" : "Ex : +212 6XX XX XX XX"}
             required
+            autoComplete="tel"
             className="py-2 rounded-3"
           />
         </Form.Group>

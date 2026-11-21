@@ -22,7 +22,7 @@ export default function Footer() {
                 className="footer-logo mb-3"
                 width="90"
                 height="60"
-                style={{ height: '60px', maxHeight: '60px', width: 'auto', objectFit: 'contain' }}
+                style={{ height: '60px', maxHeight: '60px', width: 'auto', objectFit: 'contain', aspectRatio: '90/60' }}
                 loading="lazy"
               />
             </div>

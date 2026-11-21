@@ -56,7 +56,9 @@ export default function Solutions() {
                           src={solutionImages[item.id] || pompageSolaire}
                           alt={item.title}
                           className="w-100 h-100"
-                          style={{ objectFit: "cover" }}
+                          style={{ objectFit: "cover", aspectRatio: "400/220" }}
+                          width="400"
+                          height="220"
                           loading="lazy"
                         />
                       </div>
