@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import workTime from "../../images/workTime.jpg";
+import workTime from "../../images/workTime.webp";
 
 export default function WorkDetails() {
   const { t, i18n } = useTranslation();

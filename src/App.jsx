@@ -1,15 +1,18 @@
+import React, { lazy, Suspense } from 'react';
 import './App.css';
 import Home from './components/home/Home';
-import Contact from './components/contact/Contacts';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import ProductDetails from './components/home/ProductDetails';
-import WarrantyPolicy from './components/policy/WarrantyPolicy';
 import ScrollToTop from './components/ScrollToTop';
 import MobileBottomBar from './components/MobileBottomBar';
+
+// Code-split secondary routes to keep the initial landing bundle minimal
+const Contact = lazy(() => import('./components/contact/Contacts'));
+const ProductDetails = lazy(() => import('./components/home/ProductDetails'));
+const WarrantyPolicy = lazy(() => import('./components/policy/WarrantyPolicy'));
 
 const pageVariants = {
   initial: { opacity: 0, y: 18 },
@@ -37,6 +40,16 @@ function AnimatedPage({ children }) {
   );
 }
 
+function PageFallback() {
+  return (
+    <div className="d-flex align-items-center justify-content-center" style={{ minHeight: '60vh' }}>
+      <div className="spinner-border text-primary" role="status">
+        <span className="visually-hidden">Chargement...</span>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const location = useLocation();
 
@@ -47,49 +60,51 @@ function App() {
 
       <main id="main-content">
         <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route
-              path="/"
-              element={
-                <AnimatedPage>
-                  <Home />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <AnimatedPage>
-                  <Contact />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path="/WarrantyPolicy"
-              element={
-                <AnimatedPage>
-                  <WarrantyPolicy />
-                </AnimatedPage>
-              }
-            />
-            <Route
-              path="/ProductDetails/:id"
-              element={
-                <AnimatedPage>
-                  <ProductDetails />
-                </AnimatedPage>
-              }
-            />
-            {/* Fallback to Home for any unknown route or anchor hash */}
-            <Route
-              path="*"
-              element={
-                <AnimatedPage>
-                  <Home />
-                </AnimatedPage>
-              }
-            />
-          </Routes>
+          <Suspense fallback={<PageFallback />}>
+            <Routes location={location} key={location.pathname}>
+              <Route
+                path="/"
+                element={
+                  <AnimatedPage>
+                    <Home />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <AnimatedPage>
+                    <Contact />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/WarrantyPolicy"
+                element={
+                  <AnimatedPage>
+                    <WarrantyPolicy />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/ProductDetails/:id"
+                element={
+                  <AnimatedPage>
+                    <ProductDetails />
+                  </AnimatedPage>
+                }
+              />
+              {/* Fallback to Home for any unknown route or anchor hash */}
+              <Route
+                path="*"
+                element={
+                  <AnimatedPage>
+                    <Home />
+                  </AnimatedPage>
+                }
+              />
+            </Routes>
+          </Suspense>
         </AnimatePresence>
       </main>
 

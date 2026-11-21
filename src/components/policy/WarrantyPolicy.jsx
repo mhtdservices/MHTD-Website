@@ -1,7 +1,7 @@
 import { Container, Row, Col, Card, Breadcrumb } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import warranty from "../../images/warranty.jpg";
+import warranty from "../../images/warranty.webp";
 import { FadeInUp, ScaleIn } from "../Animations";
 
 export default function WarrantyPolicy() {

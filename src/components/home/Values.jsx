@@ -1,7 +1,7 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import background from "../../images/background.jpg";
+import background from "../../images/background.webp";
 import { FadeInUp, StaggerContainer, staggerChildVariants } from '../Animations';
 
 const valueMeta = {

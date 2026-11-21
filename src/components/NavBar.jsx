@@ -7,7 +7,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useTranslation } from 'react-i18next';
-import logo from '../images/mhtd-logo.png';
+import logo from '../images/mhtd-logo.webp';
 
 function NavBar() {
   const { t, i18n } = useTranslation();
@@ -35,6 +35,8 @@ function NavBar() {
               src={logo}
               alt="MHTD Services - Énergie Solaire"
               className="navbar-logo"
+              width="78"
+              height="52"
               style={{ height: '52px', maxHeight: '52px', width: 'auto' }}
             />
           </Navbar.Brand>
@@ -121,6 +123,8 @@ function NavBar() {
             <img
               src={logo}
               alt="MHTD Logo"
+              width="66"
+              height="44"
               style={{ height: '44px', width: 'auto', objectFit: 'contain' }}
             />
           </Offcanvas.Title>

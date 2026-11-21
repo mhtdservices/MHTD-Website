@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import contactImage from "../../images/contactImage.jpg";
+import contactImage from "../../images/contactImage.webp";
 import Steps from "./Steps";
 import ContactForm from "./ContactForm";
 import WorkDetails from "./Workdetails";

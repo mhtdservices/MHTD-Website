@@ -1,9 +1,9 @@
 import Carousel from 'react-bootstrap/Carousel';
 import { HashLink } from 'react-router-hash-link';
 import { useTranslation } from 'react-i18next';
-import agricole from '../../images/agricole.jpg';
-import arrosage from '../../images/arrosage.jpg';
-import ongrid from '../../images/ongrid.jpg';
+import agricole from '../../images/agricole.webp';
+import arrosage from '../../images/arrosage.webp';
+import ongrid from '../../images/ongrid.webp';
 
 function Slider() {
   const { t } = useTranslation();
@@ -44,6 +44,10 @@ function Slider() {
                 src={slide.img}
                 alt={slide.title}
                 style={{ objectFit: 'cover' }}
+                fetchPriority={idx === 0 ? "high" : "low"}
+                loading={idx === 0 ? "eager" : "lazy"}
+                width="1280"
+                height="720"
               />
               {/* Subtle dark gradient overlay */}
               <div

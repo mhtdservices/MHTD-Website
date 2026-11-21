@@ -1,6 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import mhtdlog from '../images/mhtd-logo.png';
+import mhtdlog from '../images/mhtd-logo.webp';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
@@ -20,6 +20,8 @@ export default function Footer() {
                 src={mhtdlog}
                 alt="MHTD Logo"
                 className="footer-logo mb-3"
+                width="90"
+                height="60"
                 style={{ height: '60px', maxHeight: '60px', width: 'auto', objectFit: 'contain' }}
                 loading="lazy"
               />

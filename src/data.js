@@ -1,10 +1,10 @@
-import chauffeEauSolaire from "./images/chauffe-eau-solaire.png";
-import jasolar from "./images/jasolar.png";
-import onduleur from "./images/onduleur.png";
-import accessoires from "./images/accessoires.png";
-import coffret from "./images/coffret1.png";
-import eclairageSolaire from "./images/eclairage-solaire.png";
-import pompes from "./images/pompe.png";
+import chauffeEauSolaire from "./images/chauffe-eau-solaire.webp";
+import jasolar from "./images/jasolar.webp";
+import onduleur from "./images/onduleur.webp";
+import accessoires from "./images/accessoires.webp";
+import coffret from "./images/coffret1.webp";
+import eclairageSolaire from "./images/eclairage-solaire.webp";
+import pompes from "./images/pompe.webp";
 
 export const productsData = [
   {
