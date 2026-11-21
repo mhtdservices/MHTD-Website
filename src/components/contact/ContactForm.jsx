@@ -41,8 +41,22 @@ export default function ContactForm() {
     const templateId = "template_4zudrsb";
     const publicKey = "GHgi6dmsbELEHwaE5";
 
-    // Format rich message content so ALL details appear in EmailJS {{message}}
-    const formattedMessage = `
+    // Format rich message content so ALL details appear in EmailJS {{message}} (Bilingual support)
+    const formattedMessage = isAr
+      ? `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 طلب عرض سعر جديد — MHTD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 العميل : ${currentFormData.name}
+📞 الهاتف : ${currentFormData.number}
+✉️ البريد الإلكتروني : ${currentFormData.email}
+☀️ الخدمة المطلوبة : ${currentFormData.subject}
+
+📝 رسالة / تفاصيل العميل :
+${currentFormData.message || "لا توجد تفاصيل إضافية."}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+`
+      : `
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📋 NOUVELLE DEMANDE DE DEVIS — MHTD
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
