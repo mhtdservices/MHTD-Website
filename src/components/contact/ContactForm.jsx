@@ -45,7 +45,7 @@ export default function ContactForm() {
     const formattedMessage = isAr
       ? `
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📋 طلب عرض سعر جديد — MHTD
+📋 طلب استشارة — MHTD
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 👤 العميل : ${currentFormData.name}
 📞 الهاتف : ${currentFormData.number}

@@ -1147,3 +1147,25 @@ a:focus-visible, button:focus-visible {
   gap: 0.5rem !important;
   width: 100% !important;
 }
+
+/* ── Local FontAwesome font-display: swap ── */
+@font-face {
+  font-family: "Font Awesome 7 Free";
+  font-display: swap !important;
+}
+@font-face {
+  font-family: "Font Awesome 7 Brands";
+  font-display: swap !important;
+}
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-display: swap !important;
+}
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-display: swap !important;
+}
+@font-face {
+  font-family: "FontAwesome";
+  font-display: swap !important;
+}

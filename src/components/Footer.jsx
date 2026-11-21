@@ -169,18 +169,19 @@ export default function Footer() {
               href="https://zakariaz.netlify.app/ar"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Portfolio Développeur Zakaria Zinedine"
             >
               Zz
             </a>
           </span>
           <span className="d-none d-sm-inline">🔥</span>
           <a
-            style={{ textDecoration: 'none', color: '#475569' }}
+            style={{ textDecoration: 'none', color: '#475569', minWidth: '32px', minHeight: '32px' }}
             href="mailto:zakariazinedine1@gmail.com"
-            className="d-flex align-items-center gap-1"
+            className="d-flex align-items-center justify-content-center"
+            aria-label="Email Développeur Zakaria Zinedine"
           >
             <i className="fas fa-envelope text-primary"></i>
-            {/* <span>zakariazinedine1@gmail.com</span> */}
           </a>
         </Container>
       </div>
