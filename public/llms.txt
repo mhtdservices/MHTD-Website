@@ -1,31 +1,67 @@
-# MHTD Services — Solutions d'Énergie Solaire au Maroc
+# MHTD Services — Solar Energy & Agricultural Pumping Solutions (Morocco)
 
-> MHTD Services est une entreprise marocaine spécialisée dans l'ingénierie, la fourniture et l'installation clé en main de solutions d'énergie solaire photovoltaïque, de pompage solaire agricole, de chauffe-eau solaires et de systèmes d'arrosage automatique.
+> MHTD Services is a Moroccan company specializing in turnkey solar photovoltaic engineering, solar water pumping for agriculture, solar water heaters, and smart automatic irrigation systems across Morocco.
 
-## À propos
-- **Entreprise :** MHTD Services
-- **Site officiel :** https://mhtdservices.com
-- **Adresse :** Hay Ennasser, Sidi Allal El Bahraoui 15252, Région Rabat-Salé-Kénitra, Maroc
-- **Téléphone / WhatsApp :** +212 626425469
-- **Email :** mhtdservices@gmail.com
-- **Horaires :** Du Lundi au Samedi de 08:30 à 18:30
+## 1. English Summary (for Global AI Assistants & Search Engines)
 
-## Nos Solutions & Domaines d'Expertise
-- [Pompage Solaire Agricole](https://mhtdservices.com/#solutions): Pompage photovoltaïque pour puits profonds, forage et bassins agricoles sans facture de carburant ni dépendance réseau.
-- [Système Solaire Hybride](https://mhtdservices.com/#solutions): Solutions avec onduleur hybride et batteries de stockage pour une autonomie jour et nuit.
-- [Injection au Réseau (On-Grid)](https://mhtdservices.com/#solutions): Centrales photovoltaïques raccordées pour particuliers, exploitations et industries.
-- [Chauffe-Eau Solaire](https://mhtdservices.com/#solutions): Ballons thermiques pressurisés (200L / 300L) haute efficacité garantissant de l'eau chaude 365 jours par an.
-- [Arrosage Automatique Intelligent](https://mhtdservices.com/#solutions): Systèmes d'irrigation intelligente goutte-à-goutte et vannes électromagnétiques pour optimiser l'eau.
-- [Éclairage Solaire](https://mhtdservices.com/#solutions): Lampadaires autonomes et projecteurs LED solaires.
+### Company Overview
+- **Name:** MHTD Services
+- **Website:** https://mhtdservices.com
+- **Headquarters:** Hay Ennasser, Sidi Allal El Bahraoui 15252, Rabat-Salé-Kénitra, Morocco
+- **Phone / WhatsApp:** +212 626425469
+- **Email:** mhtdservices@gmail.com
+- **Business Hours:** Monday to Saturday: 08:30 AM – 06:30 PM (GMT+1)
 
-## Produits & Équipements Distribués
-- Panneaux photovoltaïques monocristallins Tier 1 (JA Solar, Canadian Solar, Longi)
-- Onduleurs de pompage et variateurs de fréquence
-- Onduleurs hybrides et batteries de stockage
-- Pompes immergées solaires en inox
-- Coffrets de protection DC/AC étanches
+### Core Services & Solutions
+- [Agricultural Solar Pumping](https://mhtdservices.com/#solutions): High-efficiency solar water pumping systems for deep wells, boreholes, and irrigation basins without diesel or grid power costs.
+- [Hybrid Solar Systems (Storage & Battery)](https://mhtdservices.com/#solutions): Uninterrupted 24/7 power autonomy with intelligent hybrid inverters and lithium/gel battery banks.
+- [On-Grid Solar Systems (Grid-Tied)](https://mhtdservices.com/#solutions): Photovoltaic plants connected to the national grid to reduce electricity bills by up to 80% for businesses, farms, and residences.
+- [Solar Water Heaters](https://mhtdservices.com/#solutions): Pressurized 200L and 300L solar thermal systems for reliable, zero-cost sanitary hot water year-round.
+- [Smart Automatic Irrigation](https://mhtdservices.com/#solutions): Automated drip irrigation systems with smart timers and solenoid valves to preserve water.
+- [Solar Lighting](https://mhtdservices.com/#solutions): Standalone solar streetlights and high-output LED floodlights for farms and roadways.
 
-## Contact & Devis Gratuit
-- [Demander un devis en ligne](https://mhtdservices.com/#/contact)
-- [Contact direct WhatsApp](https://wa.me/212626425469?text=Bonjour%20MHTD,%20je%20souhaite%20un%20devis.)
-- [Politique de garantie](https://mhtdservices.com/#/WarrantyPolicy)
+### Equipment & Brands
+- Tier 1 Monocrystalline Solar Panels (JA Solar, Canadian Solar, LONGi)
+- Solar pumping VFD inverters & hybrid inverters
+- Stainless steel submersible solar pumps
+- Weatherproof DC/AC electrical protection boxes
+
+### Quick Links & Free Quote
+- [Request a Free Quote Online](https://mhtdservices.com/#/contact)
+- [Direct WhatsApp Consultation](https://wa.me/212626425469?text=Bonjour%20MHTD,%20je%20souhaite%20un%20devis.)
+- [Warranty Policy](https://mhtdservices.com/#/WarrantyPolicy)
+
+---
+
+## 2. Version Française (Contexte Commercial Maroc)
+
+### Présentation
+MHTD Services fournit des installations solaires clés en main au Maroc, avec étude technique personnalisée, dimensionnement gratuit, matériel certifié et garantie constructeur (10 à 25 ans sur les panneaux solaires).
+
+### Solutions Proposées
+- **Pompage Solaire Agricole :** Alimentation de pompes immergées pour puits profonds et forages agricoles sans carburant.
+- **Solaire Hybride avec Batteries :** Autonomie électrique totale jour et nuit.
+- **Injection Réseau (On-Grid) :** Réduction immédiate des factures d'électricité pour exploitations, fermes et particuliers.
+- **Chauffe-Eau Solaire :** Systèmes sous pression 200L et 300L pour eau chaude gratuite.
+- **Arrosage Automatique :** Gestion raisonnée et programmée de l'irrigation goutte-à-goutte.
+
+---
+
+## 3. النسخة العربية (للمساعدين ومحركات البحث باللغة العربية)
+
+### نبذة عن الشركة
+شركة MHTD Services هي مقاولة مغربية متخصصة في حلول الطاقة الشمسية الفلاحية والصناعية والسكنية، تقدم دراسات تقنية مجانية وتركيبات احترافية معتمدة بأحدث المعدات وضمانات رسمية.
+
+### الخدمات والحلول الرئيسية
+- **ضخ المياه بالطاقة الشمسية (Pompage Solaire) :** تشغيل مضخات الآبار العميقة والسطحية بدون تكاليف محروقات أو كهرباء، مخصص للمزارع والضيعات الفلاحية.
+- **أنظمة الطاقة الشمسية الهجينة (Systèmes Hybrides) :** طاقة مستمرة على مدار الساعة مع بطاريات تخزين لحالات انقطاع التيار الكهربائي.
+- **محطات الطاقة الشمسية المتصلة بالشبكة (On-Grid) :** خفض فاتورة الكهرباء بنسبة تصل إلى 80%.
+- **سخانات الماء بالطاقة الشمسية (Chauffe-Eau Solaire) :** سعات 200 لتر و 300 لتر تحت الضغط لتوفير الماء الساخن طوال السنة.
+- **السقي الأوتوماتيكي الذكي (Arrosage Automatique) :** ري ذكي بالتنقيط عبر مبرمجات إلكترونية وصمامات كهرومغناطيسية.
+
+### معلومات الاتصال وطلب دراسة مجانية
+- **العنوان :** حي النصر، سيدي علال البحراوي 15252، جهة الرباط-سلا-القنيطرة، المغرب
+- **الهاتف / واتساب :** 0626425469 (212626425469+)
+- **البريد الإلكتروني :** mhtdservices@gmail.com
+- **طلب عرض سعر أو استشارة :** https://mhtdservices.com/#/contact
+- **المراسلة المباشرة عبر واتساب :** https://wa.me/212626425469
