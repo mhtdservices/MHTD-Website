@@ -1,6 +1,5 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import workTime from "../../images/workTime.webp";
 
 export default function WorkDetails() {
   const { t, i18n } = useTranslation();
@@ -22,21 +21,25 @@ export default function WorkDetails() {
         <Row className="g-4 align-items-stretch">
           {/* Horaires & Coordonnées */}
           <Col lg={5}>
-            <Card className="border-0 shadow-sm rounded-4 h-100 overflow-hidden bg-white">
-              <img
-                src={workTime}
-                alt="Horaires de travail MHTD"
-                className="w-100"
-                width="400"
-                height="200"
-                style={{ height: "200px", objectFit: "cover", aspectRatio: "400/200" }}
-                loading="lazy"
-              />
-              <Card.Body className="p-4 d-flex flex-column justify-content-between">
+            <Card className="border-0 shadow-sm rounded-4 h-100 bg-white">
+              <Card.Body className="p-4 p-md-5 d-flex flex-column justify-content-between">
                 <div>
-                  <h5 className="fw-bold mb-3" style={{ color: "#0D3B66" }}>
-                    {t('contact.practicalInfo')}
-                  </h5>
+                  <div className="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
+                    <div
+                      className="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"
+                      style={{ width: "48px", height: "48px", backgroundColor: "rgba(13, 59, 102, 0.08)", color: "#0D3B66" }}
+                    >
+                      <i className="fas fa-building-circle-check fa-lg"></i>
+                    </div>
+                    <div>
+                      <h5 className="fw-bold mb-1" style={{ color: "#0D3B66" }}>
+                        {t('contact.practicalInfo')}
+                      </h5>
+                      <span className="text-muted small">
+                        {isAr ? "ساعات العمل والتواصل المباشر" : "Horaires & Coordonnées officielles"}
+                      </span>
+                    </div>
+                  </div>
 
                   <ul className="list-unstyled mb-4">
                     <li className="d-flex align-items-start mb-3">
