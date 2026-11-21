@@ -28,11 +28,11 @@ export default function ContactForm() {
 
     // Snapshot form data for fallback in case of delivery failure
     const currentFormData = {
-      name: form.current?.name?.value || "",
-      email: form.current?.email?.value || "",
-      number: form.current?.number?.value || "",
+      name: form.current?.name?.value?.trim() || "",
+      email: form.current?.email?.value?.trim() || "",
+      number: form.current?.number?.value?.trim() || "",
       subject: form.current?.subject?.value || selectedSolution,
-      message: form.current?.message?.value || ""
+      message: form.current?.message?.value?.trim() || ""
     };
     setLastSubmittedData(currentFormData);
 
@@ -41,8 +41,41 @@ export default function ContactForm() {
     const templateId = "template_4zudrsb";
     const publicKey = "GHgi6dmsbELEHwaE5";
 
+    // Format rich message content so ALL details appear in EmailJS {{message}}
+    const formattedMessage = `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 NOUVELLE DEMANDE DE DEVIS — MHTD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 Client : ${currentFormData.name}
+📞 Téléphone : ${currentFormData.number}
+✉️ Email : ${currentFormData.email}
+☀️ Solution : ${currentFormData.subject}
+
+📝 Détails / Message du client :
+${currentFormData.message || "Aucune note complémentaire."}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+`;
+
+    // Map all potential template parameters so EmailJS template never receives blanks
+    const templateParams = {
+      name: currentFormData.name,
+      from_name: currentFormData.name,
+      email: currentFormData.email,
+      reply_to: currentFormData.email,
+      number: currentFormData.number,
+      phone: currentFormData.number,
+      subject: currentFormData.subject,
+      title: currentFormData.subject, // Matches {{title}} in EmailJS Subject
+      time: new Date().toLocaleString(isAr ? 'ar-MA' : 'fr-FR', {
+        dateStyle: 'medium',
+        timeStyle: 'short'
+      }),
+      message: formattedMessage,
+      user_message: currentFormData.message
+    };
+
     emailjs
-      .sendForm(serviceId, templateId, form.current, publicKey)
+      .send(serviceId, templateId, templateParams, publicKey)
       .then(
         () => {
           setStatus({
