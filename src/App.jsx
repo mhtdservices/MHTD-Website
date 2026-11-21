@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import './App.css';
 import Home from './components/home/Home';
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -52,6 +52,13 @@ function PageFallback() {
 
 function App() {
   const location = useLocation();
+
+  // Scroll to top on page navigation unless navigating to on-page anchors
+  useEffect(() => {
+    if (!window.location.hash.includes('#solutions') && !window.location.hash.includes('#products')) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }, [location.pathname]);
 
   return (
     <>

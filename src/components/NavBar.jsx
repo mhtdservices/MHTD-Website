@@ -46,7 +46,7 @@ function NavBar() {
             <Nav.Link as={Link} to="/" className="nav-link-custom mx-lg-1">
               {t('nav.home')}
             </Nav.Link>
-            <Nav.Link as={HashLink} smooth to="/contact/#contactForm" className="nav-link-custom mx-lg-1">
+            <Nav.Link as={Link} to="/contact" className="nav-link-custom mx-lg-1">
               {t('nav.consultation')}
             </Nav.Link>
             <NavDropdown title={t('nav.services')} id="desktop-nav-dropdown" className="nav-link-custom mx-lg-1">
@@ -57,7 +57,7 @@ function NavBar() {
                 <i className={`fas fa-store text-primary ${isAr ? 'ms-2' : 'me-2'}`}></i> {t('nav.shop')}
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={HashLink} smooth to="/contact/#contactInfo" className="py-2">
+              <NavDropdown.Item as={Link} to="/contact" className="py-2">
                 <i className={`fas fa-location-dot text-danger ${isAr ? 'ms-2' : 'me-2'}`}></i> {t('nav.contactLocation')}
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/WarrantyPolicy" className="py-2">
@@ -77,14 +77,13 @@ function NavBar() {
             </button>
 
             {/* Desktop CTA Button */}
-            <HashLink
-              smooth
-              to="/contact/#contactForm"
+            <Link
+              to="/contact"
               className={`navbar-btn-cta ${isAr ? 'me-lg-2' : 'ms-lg-2'} text-center`}
             >
               <i className="fas fa-paper-plane"></i>
               <span>{t('nav.quoteBtn')}</span>
-            </HashLink>
+            </Link>
           </Nav>
 
           {/* Mobile Right Controls: Quick Lang Toggle + Animated Hamburger */}
@@ -163,9 +162,8 @@ function NavBar() {
                 <i className={`fas fa-chevron-${isAr ? 'left' : 'right'} ms-auto text-muted small`}></i>
               </Link>
 
-              <HashLink
-                smooth
-                to="/contact/#contactForm"
+              <Link
+                to="/contact"
                 onClick={handleClose}
                 className="mobile-nav-item"
               >
@@ -174,7 +172,7 @@ function NavBar() {
                 </div>
                 <span>{t('nav.consultation')}</span>
                 <i className={`fas fa-chevron-${isAr ? 'left' : 'right'} ms-auto text-muted small`}></i>
-              </HashLink>
+              </Link>
 
               <HashLink
                 smooth
@@ -202,9 +200,8 @@ function NavBar() {
                 <i className={`fas fa-chevron-${isAr ? 'left' : 'right'} ms-auto text-muted small`}></i>
               </HashLink>
 
-              <HashLink
-                smooth
-                to="/contact/#contactInfo"
+              <Link
+                to="/contact"
                 onClick={handleClose}
                 className="mobile-nav-item"
               >
@@ -213,7 +210,7 @@ function NavBar() {
                 </div>
                 <span>{t('nav.contactLocation')}</span>
                 <i className={`fas fa-chevron-${isAr ? 'left' : 'right'} ms-auto text-muted small`}></i>
-              </HashLink>
+              </Link>
 
               <Link
                 to="/WarrantyPolicy"
@@ -231,16 +228,15 @@ function NavBar() {
 
           {/* Drawer Footer Actions */}
           <div className="pt-3 border-top">
-            <HashLink
-              smooth
-              to="/contact/#contactForm"
+            <Link
+              to="/contact"
               onClick={handleClose}
               className="btn-solar w-100 py-3 text-center mb-3 d-flex align-items-center justify-content-center gap-2"
               style={{ fontSize: '1rem', fontWeight: '700' }}
             >
               <i className="fas fa-paper-plane"></i>
               <span>{t('nav.quoteBtn')}</span>
-            </HashLink>
+            </Link>
 
             <div className="d-flex gap-2">
               <a

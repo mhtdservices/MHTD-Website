@@ -70,9 +70,9 @@ export default function Footer() {
                 </HashLink>
               </li>
               <li className="mb-2">
-                <HashLink smooth to="/contact/#contactForm" className="footer-link">
+                <Link to="/contact" className="footer-link">
                   <i className={`fas fa-angle-${isAr ? 'left' : 'right'} ${isAr ? 'ms-1' : 'me-1'}`} style={{ color: '#F39C12' }}></i> {t('nav.consultation')}
-                </HashLink>
+                </Link>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">

@@ -8,6 +8,7 @@ import energisSolaire from "../../images/energisSolaire.webp";
 import arrosageAutomatique from "../../images/arrosageAutomatique.webp";
 import injectionReseau from "../../images/injectionReseau.webp";
 import hybride from "../../images/hybride.webp";
+import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const solutionImages = {
@@ -80,14 +81,13 @@ export default function Solutions() {
                           >
                             <i className="fab fa-whatsapp"></i> {t('solutions.btnWhatsapp')}
                           </a>
-                          <HashLink
-                            smooth
-                            to="/contact/#contactForm"
+                          <Link
+                            to={`/contact?solution=${encodeURIComponent(item.title)}`}
                             className="btn btn-outline-secondary btn-sm"
                             style={{ borderRadius: "20px", fontWeight: "500" }}
                           >
                             {t('solutions.btnForm')}
-                          </HashLink>
+                          </Link>
                         </div>
                       </Card.Body>
                     </Card>

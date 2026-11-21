@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 export default function MobileBottomBar() {
   const { t, i18n } = useTranslation();
@@ -46,9 +46,8 @@ export default function MobileBottomBar() {
         </a>
 
         {/* Request a Quote Button */}
-        <HashLink
-          smooth
-          to="/contact/#contactForm"
+        <Link
+          to="/contact"
           className="mobile-bottom-btn quote-btn"
           aria-label={isAr ? "طلب عرض أسعار" : "Demander un devis"}
         >
@@ -58,7 +57,7 @@ export default function MobileBottomBar() {
           <span className="mobile-bottom-label">
             {isAr ? "عرض سعر" : "Devis"}
           </span>
-        </HashLink>
+        </Link>
       </div>
     </nav>
   );
