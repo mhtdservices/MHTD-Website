@@ -1,5 +1,6 @@
-import { Container, Row, Col, Card, Breadcrumb } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { useTranslation } from 'react-i18next';
 import { productsData } from '../../data';
 import { FadeInUp } from '../Animations';
@@ -38,17 +39,33 @@ export default function ProductDetails() {
   return (
     <section className="py-5" style={{ backgroundColor: '#F8FAFC' }}>
       <Container>
-        <Breadcrumb className="mb-4">
-          <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/' }}>
-            {t('nav.home')}
-          </Breadcrumb.Item>
-          <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/#products' }}>
-            {t('nav.shop')}
-          </Breadcrumb.Item>
-          <Breadcrumb.Item active className="text-capitalize">
-            {title}
-          </Breadcrumb.Item>
-        </Breadcrumb>
+        <nav aria-label="breadcrumb" className="mb-4">
+          <ol className="breadcrumb-modern">
+            <li className="breadcrumb-modern-item">
+              <Link to="/" className="breadcrumb-modern-link">
+                <i className="fas fa-house breadcrumb-home-icon"></i>
+                <span>{t('nav.home')}</span>
+              </Link>
+            </li>
+            <li className="breadcrumb-modern-separator" aria-hidden="true">
+              <i className={`fas fa-chevron-${isAr ? 'left' : 'right'}`}></i>
+            </li>
+            <li className="breadcrumb-modern-item">
+              <HashLink smooth to="/#products" className="breadcrumb-modern-link">
+                <i className="fas fa-store"></i>
+                <span>{t('nav.shop')}</span>
+              </HashLink>
+            </li>
+            <li className="breadcrumb-modern-separator" aria-hidden="true">
+              <i className={`fas fa-chevron-${isAr ? 'left' : 'right'}`}></i>
+            </li>
+            <li className="breadcrumb-modern-item active" aria-current="page">
+              <span className="breadcrumb-modern-current text-truncate" title={title}>
+                {title}
+              </span>
+            </li>
+          </ol>
+        </nav>
 
         <FadeInUp>
           <Card className="border-0 shadow-sm rounded-4 overflow-hidden bg-white p-3 p-md-4">

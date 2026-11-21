@@ -109,7 +109,7 @@ export default function Products() {
                             <i className="fab fa-whatsapp"></i> {t('products.btnOrder')}
                           </a>
                           <Link
-                            to={`/ProductDetails/${product.id}`}
+                            to={`/produits/${product.id}`}
                             className="btn btn-outline-secondary btn-sm text-center"
                             style={{
                               borderRadius: '20px',

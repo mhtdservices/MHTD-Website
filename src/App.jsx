@@ -86,10 +86,10 @@ function App() {
                 }
               />
               <Route
-                path="/WarrantyPolicy"
+                path="/produits/:id"
                 element={
                   <AnimatedPage>
-                    <WarrantyPolicy />
+                    <ProductDetails />
                   </AnimatedPage>
                 }
               />
@@ -98,6 +98,22 @@ function App() {
                 element={
                   <AnimatedPage>
                     <ProductDetails />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/garantie"
+                element={
+                  <AnimatedPage>
+                    <WarrantyPolicy />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/WarrantyPolicy"
+                element={
+                  <AnimatedPage>
+                    <WarrantyPolicy />
                   </AnimatedPage>
                 }
               />
