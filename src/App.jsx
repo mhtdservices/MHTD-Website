@@ -13,6 +13,7 @@ import MobileBottomBar from './components/MobileBottomBar';
 const Contact = lazy(() => import('./components/contact/Contacts'));
 const ProductDetails = lazy(() => import('./components/home/ProductDetails'));
 const WarrantyPolicy = lazy(() => import('./components/policy/WarrantyPolicy'));
+const LegalNotice = lazy(() => import('./components/policy/LegalNotice'));
 
 const pageVariants = {
   initial: { opacity: 0, y: 18 },
@@ -114,6 +115,22 @@ function App() {
                 element={
                   <AnimatedPage>
                     <WarrantyPolicy />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/mentions-legales"
+                element={
+                  <AnimatedPage>
+                    <LegalNotice />
+                  </AnimatedPage>
+                }
+              />
+              <Route
+                path="/legal"
+                element={
+                  <AnimatedPage>
+                    <LegalNotice />
                   </AnimatedPage>
                 }
               />

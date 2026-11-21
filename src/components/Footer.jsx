@@ -85,8 +85,13 @@ export default function Footer() {
                 </HashLink>
               </li>
               <li className="mb-2">
-                <Link to="/WarrantyPolicy" className="footer-link">
+                <Link to="/garantie" className="footer-link">
                   <i className={`fas fa-angle-${isAr ? 'left' : 'right'} ${isAr ? 'ms-1' : 'me-1'}`} style={{ color: '#F39C12' }}></i> {t('nav.warranty')}
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/mentions-legales" className="footer-link">
+                  <i className={`fas fa-angle-${isAr ? 'left' : 'right'} ${isAr ? 'ms-1' : 'me-1'}`} style={{ color: '#F39C12' }}></i> {isAr ? "الإشعار القانوني والخصوصية" : "Mentions Légales & Confidentialité"}
                 </Link>
               </li>
             </ul>
@@ -161,6 +166,10 @@ export default function Footer() {
       <div className="py-3 text-center small border-top" style={{ backgroundColor: '#E2E8F0', color: '#475569' }}>
         <Container className="d-flex flex-wrap justify-content-center align-items-center gap-2">
           <span>MHTD © {currentYear}</span>
+          <span className="d-none d-sm-inline">•</span>
+          <Link to="/mentions-legales" style={{ textDecoration: 'none', color: '#475569', fontSize: '0.8rem' }}>
+            {isAr ? "الخصوصية والشروط" : "Mentions Légales & Données"}
+          </Link>
           <span className="d-none d-sm-inline">🔥</span>
           <span>
             {' '}

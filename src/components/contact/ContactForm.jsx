@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Button, Form, Card, Alert, Spinner } from "react-bootstrap";
 import emailjs from "emailjs-com";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function ContactForm() {
@@ -252,6 +252,21 @@ ${currentFormData.message || "Aucune note complémentaire."}
             </>
           )}
         </Button>
+
+        {/* Protection des données Loi 09-08 */}
+        <div className="mt-3 text-center">
+          <p className="text-muted small mb-0 d-flex flex-wrap align-items-center justify-content-center gap-1" style={{ fontSize: "0.78rem" }}>
+            <i className="fas fa-shield-halved text-success"></i>
+            <span>
+              {isAr
+                ? "معلوماتكم محمية ومخصصة حصراً لمعالجة طلبكم طبقاً للقانون المغربي رقم 09-08."
+                : "Vos données sont protégées et uniquement utilisées pour traiter votre demande (Loi 09-08)."}
+            </span>
+            <Link to="/mentions-legales" className="text-decoration-underline text-muted">
+              {isAr ? "التفاصيل القانونية" : "En savoir plus"}
+            </Link>
+          </p>
+        </div>
       </Form>
     </Card>
   );
