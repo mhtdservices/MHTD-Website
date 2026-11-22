@@ -41,10 +41,10 @@ export default function Products() {
                 <Col key={product.id} className="d-flex align-items-stretch">
                   <m.div variants={staggerChildVariants} className="w-100 h-100 d-flex flex-column">
                     <Card className="h-100 card-hover-lift bg-white w-100 d-flex flex-column justify-content-between shadow-sm">
-                      {/* Image container identical to Solutions, scaled down 30% (155px vs 220px) */}
+                      {/* Product image — mix-blend-mode:multiply blends colored backgrounds with white */}
                       <div
-                        className="img-zoom-container position-relative d-flex align-items-center justify-content-center"
-                        style={{ height: '155px', backgroundColor: '#F8FAFC' }}
+                        className="product-img-wrap"
+                        style={{ height: '160px' }}
                       >
                         <Card.Img
                           variant="top"
@@ -52,16 +52,13 @@ export default function Products() {
                           srcSet={product.imgurl2x ? `${product.imgurl} 500w, ${product.imgurl2x} 1000w` : undefined}
                           sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 300px"
                           alt={title}
-                          className="w-100 h-100"
                           style={{
-                            objectFit: 'contain',
-                            maxHeight: '135px',
-                            maxWidth: '88%',
-                            padding: '6px',
-                            aspectRatio: '300/155'
+                            width: '100%',
+                            height: '140px',
+                            maxWidth: '90%',
                           }}
                           width="300"
-                          height="155"
+                          height="160"
                           loading="lazy"
                           decoding="async"
                         />
