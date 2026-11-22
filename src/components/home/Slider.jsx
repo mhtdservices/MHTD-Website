@@ -11,7 +11,7 @@ function Slider() {
 
   const slides = [
     {
-      img: agricole,
+      img: '/agricole.webp',
       badge: t('slider.slide1.badge'),
       title: t('slider.slide1.title'),
       desc: t('slider.slide1.desc'),
@@ -35,7 +35,7 @@ function Slider() {
 
   return (
     <section id="slider" className="position-relative">
-      <Carousel interval={5000} pause="hover" indicators={true}>
+      <Carousel interval={null} indicators={true} controls={true}>
         {slides.map((slide, idx) => (
           <Carousel.Item key={idx}>
             <div className="position-relative" style={{ height: '85vh', minHeight: '560px' }}>
