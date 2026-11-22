@@ -284,27 +284,6 @@ a:focus-visible, button:focus-visible {
   transform: scale(1.07);
 }
 
-/* ── Product Card Image Blend (harmonizes mixed-background product photos) ── */
-
-.product-img-wrap {
-  background: #FFFFFF;
-  border-bottom: 1px solid var(--brand-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.product-img-wrap img {
-  mix-blend-mode: multiply;
-  object-fit: contain;
-  padding: 10px;
-  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card-hover-lift:hover .product-img-wrap img {
-  transform: scale(1.06);
-}
 
 /* ── Action Buttons ── */
 

@@ -41,10 +41,10 @@ export default function Products() {
                 <Col key={product.id} className="d-flex align-items-stretch">
                   <m.div variants={staggerChildVariants} className="w-100 h-100 d-flex flex-column">
                     <Card className="h-100 card-hover-lift bg-white w-100 d-flex flex-column justify-content-between shadow-sm">
-                      {/* Product image — mix-blend-mode:multiply blends colored backgrounds with white */}
+                      {/* Product image — edge-to-edge cover to eliminate empty side gaps */}
                       <div
-                        className="product-img-wrap"
-                        style={{ height: '160px' }}
+                        className="img-zoom-container position-relative"
+                        style={{ height: '200px' }}
                       >
                         <Card.Img
                           variant="top"
@@ -52,13 +52,12 @@ export default function Products() {
                           srcSet={product.imgurl2x ? `${product.imgurl} 500w, ${product.imgurl2x} 1000w` : undefined}
                           sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 300px"
                           alt={title}
+                          className="w-100 h-100"
                           style={{
-                            width: '100%',
-                            height: '140px',
-                            maxWidth: '90%',
+                            objectFit: 'cover',
                           }}
                           width="300"
-                          height="160"
+                          height="200"
                           loading="lazy"
                           decoding="async"
                         />
