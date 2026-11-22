@@ -636,6 +636,10 @@ a:focus-visible, button:focus-visible {
   transform: translateX(4px);
 }
 
+[dir="rtl"] .footer-link:hover {
+  transform: translateX(-4px);
+}
+
 .footer-social-btn {
   width: 40px;
   height: 40px;
@@ -960,6 +964,14 @@ a:focus-visible, button:focus-visible {
 
   /* Footer Mobile */
   footer {
+    text-align: start;
+  }
+
+  [dir="rtl"] footer {
+    text-align: right;
+  }
+
+  [dir="ltr"] footer {
     text-align: left;
   }
 

@@ -25,7 +25,7 @@ export default function Footer() {
       <Container className="py-5">
         <Row className="g-4 justify-content-between">
           {/* Brand & Mission */}
-          <Col lg={4} md={6}>
+          <Col xs={12} md={6} lg={4}>
             <div className="mb-3">
               <img
                 src="/mhtd-logo.webp"
@@ -70,80 +70,80 @@ export default function Footer() {
           </Col>
 
           {/* Navigation Rapide */}
-          <Col lg={2} sm={6}>
+          <Col xs={6} sm={6} lg={2}>
             <h6 className="fw-bold mb-3 text-uppercase" style={{ color: '#0D3B66', letterSpacing: '0.8px', fontSize: '0.85rem' }}>
               {t('footer.navTitle')}
             </h6>
             <ul className="list-unstyled small mb-0">
               <li className="mb-2">
                 <HashLink to="/" className="footer-link">
-                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.home')}
+                  {isAr ? <FaAngleLeft className="me-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.home')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <Link to="/contact" className="footer-link">
-                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.consultation')}
+                  {isAr ? <FaAngleLeft className="me-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.consultation')}
                 </Link>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.solutions')}
+                  {isAr ? <FaAngleLeft className="me-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.solutions')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#products" className="footer-link">
-                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.shop')}
+                  {isAr ? <FaAngleLeft className="me-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.shop')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <Link to="/garantie" className="footer-link">
-                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.warranty')}
+                  {isAr ? <FaAngleLeft className="me-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.warranty')}
                 </Link>
               </li>
               <li className="mb-2">
                 <Link to="/mentions-legales" className="footer-link">
-                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('footer.legalLink')}
+                  {isAr ? <FaAngleLeft className="me-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('footer.legalLink')}
                 </Link>
               </li>
             </ul>
           </Col>
 
           {/* Nos Solutions */}
-          <Col lg={3} sm={6}>
+          <Col xs={6} sm={6} lg={3}>
             <h6 className="fw-bold mb-3 text-uppercase" style={{ color: '#0D3B66', letterSpacing: '0.8px', fontSize: '0.85rem' }}>
               {t('footer.solutionsTitle')}
             </h6>
             <ul className="list-unstyled small mb-0">
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  {t('footer.sol1')}
+                  {isAr ? <FaAngleLeft className="me-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('footer.sol1')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  {t('footer.sol2')}
+                  {isAr ? <FaAngleLeft className="me-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('footer.sol2')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  {t('footer.sol3')}
+                  {isAr ? <FaAngleLeft className="me-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('footer.sol3')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  {t('footer.sol4')}
+                  {isAr ? <FaAngleLeft className="me-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('footer.sol4')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  {t('footer.sol5')}
+                  {isAr ? <FaAngleLeft className="me-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('footer.sol5')}
                 </HashLink>
               </li>
             </ul>
           </Col>
 
           {/* Contact Direct */}
-          <Col lg={3} md={6}>
+          <Col xs={12} md={6} lg={3}>
             <h6 className="fw-bold mb-3 text-uppercase" style={{ color: '#0D3B66', letterSpacing: '0.8px', fontSize: '0.85rem' }}>
               {t('footer.contactTitle')}
             </h6>
