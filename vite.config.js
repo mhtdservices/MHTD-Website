@@ -20,7 +20,11 @@ function purgeCssPlugin() {
 
       const { PurgeCSS } = await import('purgecss');
       const results = await new PurgeCSS().purge({
-        content: ['index.html', 'src/**/*.{js,jsx,html}'],
+        content: [
+          'index.html',
+          'src/**/*.{js,jsx,html}',
+          'node_modules/react-bootstrap/esm/**/*.js',
+        ],
         css: cssFiles,
         safelist: {
           standard: [
@@ -32,6 +36,15 @@ function purgeCssPlugin() {
             /^order-/,
             /^offset-/,
             /^container/,
+            /^form/,
+            /^input/,
+            /^alert/,
+            /^breadcrumb/,
+            /^d-/,
+            /^flex/,
+            /^justify-content/,
+            /^align-items/,
+            /^align-self/,
             /^fade/,
             /^show/,
             /^collapse/,
@@ -54,8 +67,8 @@ function purgeCssPlugin() {
             '[dir="rtl"]',
             '[dir="ltr"]',
           ],
-          deep: [/carousel/, /offcanvas/, /dropdown/, /navbar/, /nav/, /modal/, /spinner/, /col/, /row/],
-          greedy: [/carousel/, /offcanvas/, /dropdown/, /navbar/, /nav/, /modal/, /spinner/, /col/, /row/],
+          deep: [/carousel/, /offcanvas/, /dropdown/, /navbar/, /nav/, /modal/, /spinner/, /col/, /row/, /card/, /form/],
+          greedy: [/carousel/, /offcanvas/, /dropdown/, /navbar/, /nav/, /modal/, /spinner/, /col/, /row/, /card/, /form/],
         },
       });
 
