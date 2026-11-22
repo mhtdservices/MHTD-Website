@@ -41,6 +41,7 @@ const solutionImages2x = {
 
 export default function Solutions() {
   const { t, i18n } = useTranslation();
+  const isAr = i18n.language === 'ar';
   const phoneNumber = "212626425469";
   const items = t('solutions.items', { returnObjects: true }) || [];
 
