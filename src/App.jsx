@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useEffect } from 'react';
 import './App.css';
 import Home from './components/home/Home';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { LazyMotion, domAnimation, AnimatePresence, m } from 'framer-motion';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -29,7 +29,7 @@ const pageTransition = {
 
 function AnimatedPage({ children }) {
   return (
-    <motion.div
+    <m.div
       initial="initial"
       animate="in"
       exit="out"
@@ -37,7 +37,7 @@ function AnimatedPage({ children }) {
       transition={pageTransition}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -62,7 +62,7 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <>
+    <LazyMotion features={domAnimation} strict>
       <Header />
       <NavBar />
 
@@ -151,7 +151,7 @@ function App() {
       <Footer />
       <ScrollToTop />
       <MobileBottomBar />
-    </>
+    </LazyMotion>
   );
 }
 

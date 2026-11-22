@@ -1,5 +1,5 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FadeInUp, StaggerContainer, staggerChildVariants } from '../Animations';
 import { FaStar } from '../common/Icons';
@@ -55,7 +55,7 @@ export default function Testimony() {
           <Row className="g-4">
             {reviews.map((rev) => (
               <Col key={rev.id} lg={4} md={6}>
-                <motion.div variants={staggerChildVariants} className="h-100">
+                <m.div variants={staggerChildVariants} className="h-100">
                   <Card className="h-100 card-hover-lift bg-white border-0 p-4">
                     <Card.Body className="p-0 d-flex flex-column">
                       {/* Rating Stars */}
@@ -94,7 +94,7 @@ export default function Testimony() {
                       </div>
                     </Card.Body>
                   </Card>
-                </motion.div>
+                </m.div>
               </Col>
             ))}
           </Row>

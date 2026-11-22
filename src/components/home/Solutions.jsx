@@ -1,5 +1,5 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { FadeInUp, StaggerContainer, staggerChildVariants } from "../Animations";
 import pompageSolaire from "../../images/pomageSolaire.webp";
@@ -49,7 +49,7 @@ export default function Solutions() {
 
               return (
                 <Col key={item.id}>
-                  <motion.div variants={staggerChildVariants} className="h-100">
+                  <m.div variants={staggerChildVariants} className="h-100">
                     <Card className="h-100 card-hover-lift bg-white">
                       <div className="img-zoom-container position-relative" style={{ height: "220px" }}>
                         <span className="card-feature-badge">{item.badge}</span>
@@ -92,7 +92,7 @@ export default function Solutions() {
                         </div>
                       </Card.Body>
                     </Card>
-                  </motion.div>
+                  </m.div>
                 </Col>
               );
             })}

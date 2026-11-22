@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FadeInUp } from '../Animations';
 import { FaSolarPanel, FaAward, FaLeaf, FaFileInvoiceDollar } from '../common/Icons';
@@ -41,7 +41,7 @@ export default function StatsBar() {
           {stats.map((stat, idx) => (
             <Col key={idx} xs={6} md={3}>
               <FadeInUp delay={idx * 0.1}>
-                <motion.div
+                <m.div
                   whileHover={{ y: -6, boxShadow: '0 12px 28px rgba(0,0,0,0.25)' }}
                   transition={{ duration: 0.25 }}
                   className="stats-card p-3 p-md-4 bg-white rounded-4 shadow h-100 d-flex flex-column align-items-center justify-content-center border-0"
@@ -54,7 +54,7 @@ export default function StatsBar() {
                   <span className="text-muted" style={{ fontSize: '0.74rem' }}>
                     {stat.desc}
                   </span>
-                </motion.div>
+                </m.div>
               </FadeInUp>
             </Col>
           ))}

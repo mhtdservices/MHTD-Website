@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { productsData } from '../../data';
 import { FadeInUp, StaggerContainer, staggerChildVariants } from '../Animations';
@@ -41,7 +41,7 @@ export default function Products() {
 
               return (
                 <Col key={product.id} className="d-flex align-items-stretch">
-                  <motion.div variants={staggerChildVariants} className="w-100 h-100 d-flex flex-column">
+                  <m.div variants={staggerChildVariants} className="w-100 h-100 d-flex flex-column">
                     <Card className="h-100 card-hover-lift bg-white w-100 d-flex flex-column justify-content-between shadow-sm">
                       {/* Image container identical to Solutions, scaled down 30% (155px vs 220px) */}
                       <div
@@ -124,7 +124,7 @@ export default function Products() {
                         </div>
                       </Card.Body>
                     </Card>
-                  </motion.div>
+                  </m.div>
                 </Col>
               );
             })}

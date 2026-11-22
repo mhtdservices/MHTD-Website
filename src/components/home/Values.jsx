@@ -1,5 +1,5 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import background from "../../images/background.webp";
 import { FadeInUp, StaggerContainer, staggerChildVariants } from '../Animations';
@@ -50,7 +50,7 @@ function ValuesSection() {
               const meta = valueMeta[v.id] || { icon: FaSolarPanel, color: "#F39C12" };
               return (
                 <Col key={v.id} lg={4} md={6}>
-                  <motion.div variants={staggerChildVariants} className="h-100">
+                  <m.div variants={staggerChildVariants} className="h-100">
                     <Card className="h-100 border-0 rounded-4 shadow bg-white p-4 text-center card-hover-lift">
                       <div
                         className="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle"
@@ -75,7 +75,7 @@ function ValuesSection() {
                         </Card.Text>
                       </Card.Body>
                     </Card>
-                  </motion.div>
+                  </m.div>
                 </Col>
               );
             })}

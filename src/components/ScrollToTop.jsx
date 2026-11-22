@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { FaArrowUp } from './common/Icons';
 
 export default function ScrollToTop() {
@@ -20,7 +20,7 @@ export default function ScrollToTop() {
   return (
     <AnimatePresence>
       {visible && (
-        <motion.button
+        <m.button
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.6 }}
@@ -30,7 +30,7 @@ export default function ScrollToTop() {
           className="scroll-to-top-btn"
         >
           <FaArrowUp />
-        </motion.button>
+        </m.button>
       )}
     </AnimatePresence>
   );

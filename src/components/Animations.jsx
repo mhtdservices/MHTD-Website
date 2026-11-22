@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 // Reusable fade-in-up animation wrapper for scroll reveals
 export function FadeInUp({ children, delay = 0, className = '', ...props }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -12,14 +12,14 @@ export function FadeInUp({ children, delay = 0, className = '', ...props }) {
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
 // Fade-in from left
 export function FadeInLeft({ children, delay = 0, className = '', ...props }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -28,14 +28,14 @@ export function FadeInLeft({ children, delay = 0, className = '', ...props }) {
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
 // Fade-in from right
 export function FadeInRight({ children, delay = 0, className = '', ...props }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: '-60px' }}
@@ -44,14 +44,14 @@ export function FadeInRight({ children, delay = 0, className = '', ...props }) {
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
 // Scale-in for cards
 export function ScaleIn({ children, delay = 0, className = '', ...props }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: 0.92 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: '-40px' }}
@@ -60,14 +60,14 @@ export function ScaleIn({ children, delay = 0, className = '', ...props }) {
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
 // Stagger container for children (use with motion components as children)
 export function StaggerContainer({ children, className = '', staggerDelay = 0.1, ...props }) {
   return (
-    <motion.div
+    <m.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-40px' }}
@@ -83,7 +83,7 @@ export function StaggerContainer({ children, className = '', staggerDelay = 0.1,
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -100,7 +100,7 @@ export const staggerChildVariants = {
 // Animated counter for stats
 export function AnimatedCounter({ target, suffix = '', className = '' }) {
   return (
-    <motion.span
+    <m.span
       className={className}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -108,7 +108,7 @@ export function AnimatedCounter({ target, suffix = '', className = '' }) {
       transition={{ duration: 0.4 }}
     >
       {target}{suffix}
-    </motion.span>
+    </m.span>
   );
 }
 
