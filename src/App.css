@@ -631,6 +631,10 @@ a:focus-visible, button:focus-visible {
   padding: 3px 0;
 }
 
+.grow {
+  flex-grow: 1 !important;
+}
+
 .footer-link:hover {
   color: var(--brand-gold) !important;
   transform: translateX(4px);

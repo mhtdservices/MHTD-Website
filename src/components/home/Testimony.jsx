@@ -68,7 +68,7 @@ export default function Testimony() {
                         ))}
                       </div>
 
-                      <p className="text-muted small mb-4 flex-grow-1 fst-italic" style={{ lineHeight: "1.7" }}>
+                      <p className="text-muted small mb-4 flex-grow-1 grow fst-italic" style={{ lineHeight: "1.7" }}>
                         "{rev.quote}"
                       </p>
 
