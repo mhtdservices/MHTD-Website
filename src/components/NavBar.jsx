@@ -7,7 +7,6 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useTranslation } from 'react-i18next';
-import logo from '../images/mhtd-logo.webp';
 import {
   FaSolarPanel,
   FaStore,
@@ -48,11 +47,12 @@ function NavBar() {
           {/* Brand Logo */}
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center py-0">
             <img
-              src={logo}
+              src="/mhtd-logo.webp"
               alt="MHTD Services - Énergie Solaire"
               className="navbar-logo"
               width="78"
               height="52"
+              fetchPriority="high"
               style={{ height: '52px', maxHeight: '52px', width: 'auto' }}
             />
           </Navbar.Brand>
@@ -136,10 +136,12 @@ function NavBar() {
         <Offcanvas.Header closeButton className="border-bottom px-4 py-3">
           <Offcanvas.Title className="d-flex align-items-center">
             <img
-              src={logo}
+              src="/mhtd-logo.webp"
               alt="MHTD Logo"
               width="66"
               height="44"
+              loading="lazy"
+              decoding="async"
               style={{ height: '44px', width: 'auto', objectFit: 'contain' }}
             />
           </Offcanvas.Title>

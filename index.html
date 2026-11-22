@@ -24,7 +24,8 @@
     <link rel="mask-icon" href="/logo.svg" color="#0D3B66" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0d3b66" />
-    <!-- Preload critical Hero LCP image -->
+    <!-- Preload critical LCP images: Navbar Logo and Hero Banner -->
+    <link rel="preload" as="image" href="/mhtd-logo.webp" type="image/webp" fetchpriority="high" />
     <link rel="preload" as="image" href="/agricole.webp" type="image/webp" fetchpriority="high" />
     <!-- Preload critical Cairo WOFF2 fonts -->
     <link rel="preload" href="/fonts/cairo-arabic-700-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
@@ -67,7 +68,39 @@
   </head>
   <body>
     <noscript>Vous devez activer JavaScript pour exécuter cette application.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static LCP shell: paints navbar logo instantly on HTML parse before React hydrates -->
+      <div class="py-2 text-white small bg-gradient-topbar" style="min-height: 38px; background: linear-gradient(90deg, #092A4A 0%, #0D3B66 50%, #154D81 100%);">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-3">
+            <span class="d-flex align-items-center gap-1" dir="ltr" style="color: #fff; font-size: 0.875rem;">
+              <span style="color: #F39C12;">📞</span>
+              <span>+212 626425469</span>
+            </span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge px-2 py-1" style="background-color: rgba(243, 156, 18, 0.2); color: #F39C12; border: 1px solid #F39C12; font-size: 0.75rem;">
+              Devis Gratuit 24h
+            </span>
+          </div>
+        </div>
+      </div>
+      <header class="navbar navbar-expand-lg navbar-custom sticky-top" style="background-color: #FFFFFF; min-height: 68px; border-bottom: 1px solid #E2E8F0; padding-top: 0.5rem; padding-bottom: 0.5rem;">
+        <div class="container d-flex align-items-center justify-content-between">
+          <a class="navbar-brand d-flex align-items-center py-0" href="/" aria-label="MHTD Services Accueil">
+            <img
+              src="/mhtd-logo.webp"
+              alt="MHTD Services - Énergie Solaire"
+              class="navbar-logo"
+              width="78"
+              height="52"
+              fetchpriority="high"
+              style="height: 52px; max-height: 52px; width: auto;"
+            />
+          </a>
+        </div>
+      </header>
+    </div>
     <script type="module" src="/src/index.jsx"></script>
   </body>
 </html>

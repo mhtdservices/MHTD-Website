@@ -67,7 +67,7 @@ function App() {
       <NavBar />
 
       <main id="main-content">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <Suspense fallback={<PageFallback />}>
             <Routes location={location} key={location.pathname}>
               <Route
