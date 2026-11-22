@@ -1,4 +1,6 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FadeInUp } from '../Animations';

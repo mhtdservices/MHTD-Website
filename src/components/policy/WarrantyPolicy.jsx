@@ -1,4 +1,8 @@
-import { Container, Row, Col, Card, Breadcrumb } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import warranty from "../../images/warranty.webp";

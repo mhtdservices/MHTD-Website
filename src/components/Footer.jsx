@@ -1,6 +1,7 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { useTranslation } from 'react-i18next';
-import mhtdlog from '../images/mhtd-logo.webp';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import {
@@ -27,7 +28,7 @@ export default function Footer() {
           <Col lg={4} md={6}>
             <div className="mb-3">
               <img
-                src={mhtdlog}
+                src="/mhtd-logo.webp"
                 alt="MHTD Logo"
                 className="footer-logo mb-3"
                 width="90"

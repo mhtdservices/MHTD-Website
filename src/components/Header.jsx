@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
 import { useTranslation } from "react-i18next";
 import { FaPhoneAlt, FaEnvelope, FaLocationDot, FaWhatsapp } from "./common/Icons";
 import '../App.css';

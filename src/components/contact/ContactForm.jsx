@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import { Button, Form, Card, Alert, Spinner } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 import emailjs from "emailjs-com";
 import { useLocation, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";

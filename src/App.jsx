@@ -5,11 +5,11 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { LazyMotion, domAnimation, AnimatePresence, m } from 'framer-motion';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
-import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import MobileBottomBar from './components/MobileBottomBar';
 
-// Code-split secondary routes to keep the initial landing bundle minimal
+// Code-split secondary routes and below-the-fold components
+const Footer = lazy(() => import('./components/Footer'));
 const Contact = lazy(() => import('./components/contact/Contacts'));
 const ProductDetails = lazy(() => import('./components/home/ProductDetails'));
 const WarrantyPolicy = lazy(() => import('./components/policy/WarrantyPolicy'));
@@ -148,7 +148,9 @@ function App() {
         </AnimatePresence>
       </main>
 
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
       <ScrollToTop />
       <MobileBottomBar />
     </LazyMotion>
