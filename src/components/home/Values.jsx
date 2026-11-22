@@ -3,11 +3,12 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import background from "../../images/background.webp";
 import { FadeInUp, StaggerContainer, staggerChildVariants } from '../Animations';
+import { FaSolarPanel, FaHandshakeAngle, FaLeaf } from '../common/Icons';
 
 const valueMeta = {
-  1: { icon: "fa-solar-panel", color: "#F39C12" },
-  2: { icon: "fa-handshake-angle", color: "#0D3B66" },
-  3: { icon: "fa-leaf", color: "#27AE60" }
+  1: { icon: FaSolarPanel, color: "#F39C12" },
+  2: { icon: FaHandshakeAngle, color: "#0D3B66" },
+  3: { icon: FaLeaf, color: "#27AE60" }
 };
 
 function ValuesSection() {
@@ -46,7 +47,7 @@ function ValuesSection() {
         <StaggerContainer>
           <Row className="g-4">
             {items.map((v) => {
-              const meta = valueMeta[v.id] || { icon: "fa-solar-panel", color: "#F39C12" };
+              const meta = valueMeta[v.id] || { icon: FaSolarPanel, color: "#F39C12" };
               return (
                 <Col key={v.id} lg={4} md={6}>
                   <motion.div variants={staggerChildVariants} className="h-100">
@@ -60,7 +61,7 @@ function ValuesSection() {
                           color: meta.color,
                         }}
                       >
-                        <i className={`fas ${meta.icon} fa-2x`}></i>
+                        <meta.icon className="fa-2x" />
                       </div>
                       <Card.Body className="p-0 d-flex flex-column">
                         <span className="text-uppercase fw-bold small mb-2" style={{ color: meta.color, letterSpacing: '0.5px' }}>

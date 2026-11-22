@@ -4,6 +4,17 @@ import { HashLink } from 'react-router-hash-link';
 import { useTranslation } from 'react-i18next';
 import { productsData } from '../../data';
 import { FadeInUp } from '../Animations';
+import {
+  FaBoxOpen,
+  FaHouse,
+  FaChevronLeft,
+  FaChevronRight,
+  FaStore,
+  FaListCheck,
+  FaWhatsapp,
+  FaArrowLeft,
+  FaArrowRight,
+} from '../common/Icons';
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -16,7 +27,7 @@ export default function ProductDetails() {
     return (
       <Container className="py-5 text-center my-5">
         <FadeInUp className="p-5 bg-light rounded-4 shadow-sm mx-auto" style={{ maxWidth: '500px' }}>
-          <i className="fas fa-box-open fa-3x text-muted mb-3"></i>
+          <FaBoxOpen className="fa-3x text-muted mb-3" />
           <h2 className="fw-bold mb-3" style={{ color: '#0D3B66' }}>{t('products.notFoundTitle')}</h2>
           <p className="text-muted mb-4">{t('products.notFoundDesc')}</p>
           <Link to="/" className="btn btn-solar px-4 py-2">
@@ -43,21 +54,21 @@ export default function ProductDetails() {
           <ol className="breadcrumb-modern">
             <li className="breadcrumb-modern-item">
               <Link to="/" className="breadcrumb-modern-link">
-                <i className="fas fa-house breadcrumb-home-icon"></i>
+                <FaHouse className="breadcrumb-home-icon" />
                 <span>{t('nav.home')}</span>
               </Link>
             </li>
             <li className="breadcrumb-modern-separator" aria-hidden="true">
-              <i className={`fas fa-chevron-${isAr ? 'left' : 'right'}`}></i>
+              {isAr ? <FaChevronLeft /> : <FaChevronRight />}
             </li>
             <li className="breadcrumb-modern-item">
               <HashLink smooth to="/#products" className="breadcrumb-modern-link">
-                <i className="fas fa-store"></i>
+                <FaStore />
                 <span>{t('nav.shop')}</span>
               </HashLink>
             </li>
             <li className="breadcrumb-modern-separator" aria-hidden="true">
-              <i className={`fas fa-chevron-${isAr ? 'left' : 'right'}`}></i>
+              {isAr ? <FaChevronLeft /> : <FaChevronRight />}
             </li>
             <li className="breadcrumb-modern-item active" aria-current="page">
               <span className="breadcrumb-modern-current text-truncate" title={title}>
@@ -103,7 +114,7 @@ export default function ProductDetails() {
                     }}
                   >
                     <h6 className="fw-bold mb-2" style={{ color: '#0D3B66' }}>
-                      <i className={`fas fa-list-check ${isAr ? 'ms-2' : 'me-2'}`} style={{ color: '#F39C12' }}></i>
+                      <FaListCheck className={isAr ? 'ms-2' : 'me-2'} style={{ color: '#F39C12' }} />
                       {t('products.featuresHeader')}
                     </h6>
                     <p className="text-muted small mb-0" style={{ lineHeight: '1.6' }}>
@@ -118,11 +129,11 @@ export default function ProductDetails() {
                       rel="noopener noreferrer"
                       className="btn-whatsapp px-4 py-2"
                     >
-                      <i className="fab fa-whatsapp fa-lg"></i> {t('products.whatsappOrder')}
+                      <FaWhatsapp className="fa-lg" /> {t('products.whatsappOrder')}
                     </a>
 
                     <Link to="/#products" className="btn btn-outline-secondary px-4 py-2" style={{ borderRadius: '30px' }}>
-                      <i className={`fas fa-arrow-${isAr ? 'right' : 'left'} ${isAr ? 'ms-1' : 'me-1'}`}></i> {t('products.btnBackShop')}
+                      {isAr ? <FaArrowRight className="ms-1" /> : <FaArrowLeft className="me-1" />} {t('products.btnBackShop')}
                     </Link>
                   </div>
                 </div>

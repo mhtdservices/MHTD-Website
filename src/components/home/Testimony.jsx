@@ -2,6 +2,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FadeInUp, StaggerContainer, staggerChildVariants } from '../Animations';
+import { FaStar } from '../common/Icons';
 
 export default function Testimony() {
   const { t, i18n } = useTranslation();
@@ -60,7 +61,7 @@ export default function Testimony() {
                       {/* Rating Stars */}
                       <div className="mb-3" style={{ color: "#F39C12" }}>
                         {[...Array(5)].map((_, i) => (
-                          <i key={i} className={`fas fa-star ${isAr ? 'ms-1' : 'me-1'}`}></i>
+                          <FaStar key={i} className={isAr ? 'ms-1' : 'me-1'} />
                         ))}
                       </div>
 

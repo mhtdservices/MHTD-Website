@@ -8,6 +8,22 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useTranslation } from 'react-i18next';
 import logo from '../images/mhtd-logo.webp';
+import {
+  FaSolarPanel,
+  FaStore,
+  FaLocationDot,
+  FaAward,
+  FaGlobe,
+  FaPaperPlane,
+  FaBars,
+  FaHouse,
+  FaClipboardQuestion,
+  FaShieldHalved,
+  FaChevronLeft,
+  FaChevronRight,
+  FaPhone,
+  FaWhatsapp
+} from './common/Icons';
 
 function NavBar() {
   const { t, i18n } = useTranslation();
@@ -51,17 +67,17 @@ function NavBar() {
             </Nav.Link>
             <NavDropdown title={t('nav.services')} id="desktop-nav-dropdown" className="nav-link-custom mx-lg-1">
               <NavDropdown.Item as={HashLink} smooth to="/#solutions" className="py-2">
-                <i className={`fas fa-solar-panel text-warning ${isAr ? 'ms-2' : 'me-2'}`}></i> {t('nav.solutions')}
+                <FaSolarPanel className={`text-warning ${isAr ? 'ms-2' : 'me-2'}`} /> {t('nav.solutions')}
               </NavDropdown.Item>
               <NavDropdown.Item as={HashLink} smooth to="/#products" className="py-2">
-                <i className={`fas fa-store text-primary ${isAr ? 'ms-2' : 'me-2'}`}></i> {t('nav.shop')}
+                <FaStore className={`text-primary ${isAr ? 'ms-2' : 'me-2'}`} /> {t('nav.shop')}
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item as={Link} to="/contact" className="py-2">
-                <i className={`fas fa-location-dot text-danger ${isAr ? 'ms-2' : 'me-2'}`}></i> {t('nav.contactLocation')}
+                <FaLocationDot className={`text-danger ${isAr ? 'ms-2' : 'me-2'}`} /> {t('nav.contactLocation')}
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/WarrantyPolicy" className="py-2">
-                <i className={`fas fa-award text-success ${isAr ? 'ms-2' : 'me-2'}`}></i> {t('nav.warranty')}
+                <FaAward className={`text-success ${isAr ? 'ms-2' : 'me-2'}`} /> {t('nav.warranty')}
               </NavDropdown.Item>
             </NavDropdown>
 
@@ -72,7 +88,7 @@ function NavBar() {
               aria-label="Changer de langue / تغيير اللغة"
               title="Changer de langue / تغيير اللغة"
             >
-              <i className="fas fa-globe"></i>
+              <FaGlobe />
               <span>{isAr ? 'Français' : 'العربية'}</span>
             </button>
 
@@ -81,7 +97,7 @@ function NavBar() {
               to="/contact"
               className={`navbar-btn-cta ${isAr ? 'me-lg-2' : 'ms-lg-2'} text-center`}
             >
-              <i className="fas fa-paper-plane"></i>
+              <FaPaperPlane />
               <span>{t('nav.quoteBtn')}</span>
             </Link>
           </Nav>
@@ -94,7 +110,7 @@ function NavBar() {
               aria-label="Changer de langue / تغيير اللغة"
               style={{ fontSize: '0.8rem' }}
             >
-              <i className="fas fa-globe"></i>
+              <FaGlobe />
               <span>{isAr ? 'FR' : 'عربي'}</span>
             </button>
 
@@ -104,7 +120,7 @@ function NavBar() {
               onClick={handleShow}
               aria-label="Ouvrir le menu de navigation"
             >
-              <i className="fas fa-bars fa-lg"></i>
+              <FaBars className="fa-lg" />
             </button>
           </div>
         </Container>
@@ -134,7 +150,7 @@ function NavBar() {
             {/* Language switcher inside drawer */}
             <div className="d-flex justify-content-between align-items-center p-3 mb-4 rounded-3" style={{ backgroundColor: '#F8FAFC', border: '1px solid #E2E8F0' }}>
               <div className="d-flex align-items-center gap-2">
-                <i className="fas fa-globe text-primary"></i>
+                <FaGlobe className="text-primary" />
                 <span className="small fw-semibold text-dark">
                   {isAr ? 'اللغة الحالية:' : 'Langue :'}
                 </span>
@@ -156,10 +172,10 @@ function NavBar() {
                 className="mobile-nav-item"
               >
                 <div className="mobile-nav-icon-wrap" style={{ backgroundColor: 'rgba(13, 59, 102, 0.08)', color: '#0D3B66' }}>
-                  <i className="fas fa-house"></i>
+                  <FaHouse />
                 </div>
                 <span>{t('nav.home')}</span>
-                <i className={`fas fa-chevron-${isAr ? 'left' : 'right'} ms-auto text-muted small`}></i>
+                {isAr ? <FaChevronLeft className="ms-auto text-muted small" /> : <FaChevronRight className="ms-auto text-muted small" />}
               </Link>
 
               <Link
@@ -168,10 +184,10 @@ function NavBar() {
                 className="mobile-nav-item"
               >
                 <div className="mobile-nav-icon-wrap" style={{ backgroundColor: 'rgba(243, 156, 18, 0.12)', color: '#F39C12' }}>
-                  <i className="fas fa-clipboard-question"></i>
+                  <FaClipboardQuestion />
                 </div>
                 <span>{t('nav.consultation')}</span>
-                <i className={`fas fa-chevron-${isAr ? 'left' : 'right'} ms-auto text-muted small`}></i>
+                {isAr ? <FaChevronLeft className="ms-auto text-muted small" /> : <FaChevronRight className="ms-auto text-muted small" />}
               </Link>
 
               <HashLink
@@ -181,10 +197,10 @@ function NavBar() {
                 className="mobile-nav-item"
               >
                 <div className="mobile-nav-icon-wrap" style={{ backgroundColor: 'rgba(39, 174, 96, 0.12)', color: '#27AE60' }}>
-                  <i className="fas fa-solar-panel"></i>
+                  <FaSolarPanel />
                 </div>
                 <span>{t('nav.solutions')}</span>
-                <i className={`fas fa-chevron-${isAr ? 'left' : 'right'} ms-auto text-muted small`}></i>
+                {isAr ? <FaChevronLeft className="ms-auto text-muted small" /> : <FaChevronRight className="ms-auto text-muted small" />}
               </HashLink>
 
               <HashLink
@@ -194,10 +210,10 @@ function NavBar() {
                 className="mobile-nav-item"
               >
                 <div className="mobile-nav-icon-wrap" style={{ backgroundColor: 'rgba(52, 152, 219, 0.12)', color: '#2980B9' }}>
-                  <i className="fas fa-store"></i>
+                  <FaStore />
                 </div>
                 <span>{t('nav.shop')}</span>
-                <i className={`fas fa-chevron-${isAr ? 'left' : 'right'} ms-auto text-muted small`}></i>
+                {isAr ? <FaChevronLeft className="ms-auto text-muted small" /> : <FaChevronRight className="ms-auto text-muted small" />}
               </HashLink>
 
               <Link
@@ -206,10 +222,10 @@ function NavBar() {
                 className="mobile-nav-item"
               >
                 <div className="mobile-nav-icon-wrap" style={{ backgroundColor: 'rgba(231, 76, 60, 0.12)', color: '#E74C3C' }}>
-                  <i className="fas fa-location-dot"></i>
+                  <FaLocationDot />
                 </div>
                 <span>{t('nav.contactLocation')}</span>
-                <i className={`fas fa-chevron-${isAr ? 'left' : 'right'} ms-auto text-muted small`}></i>
+                {isAr ? <FaChevronLeft className="ms-auto text-muted small" /> : <FaChevronRight className="ms-auto text-muted small" />}
               </Link>
 
               <Link
@@ -218,10 +234,10 @@ function NavBar() {
                 className="mobile-nav-item"
               >
                 <div className="mobile-nav-icon-wrap" style={{ backgroundColor: 'rgba(142, 68, 173, 0.12)', color: '#8E44AD' }}>
-                  <i className="fas fa-shield-halved"></i>
+                  <FaShieldHalved />
                 </div>
                 <span>{t('nav.warranty')}</span>
-                <i className={`fas fa-chevron-${isAr ? 'left' : 'right'} ms-auto text-muted small`}></i>
+                {isAr ? <FaChevronLeft className="ms-auto text-muted small" /> : <FaChevronRight className="ms-auto text-muted small" />}
               </Link>
             </div>
           </div>
@@ -234,7 +250,7 @@ function NavBar() {
               className="btn-solar w-100 py-3 text-center mb-3 d-flex align-items-center justify-content-center gap-2"
               style={{ fontSize: '1rem', fontWeight: '700' }}
             >
-              <i className="fas fa-paper-plane"></i>
+              <FaPaperPlane />
               <span>{t('nav.quoteBtn')}</span>
             </Link>
 
@@ -244,7 +260,7 @@ function NavBar() {
                 className="btn btn-outline-dark w-50 py-2 d-flex align-items-center justify-content-center gap-2 rounded-3"
                 style={{ fontSize: '0.85rem', fontWeight: '600' }}
               >
-                <i className="fas fa-phone text-primary"></i>
+                <FaPhone className="text-primary" />
                 <span>{isAr ? 'اتصال' : 'Appeler'}</span>
               </a>
 
@@ -255,7 +271,7 @@ function NavBar() {
                 className="btn btn-outline-success w-50 py-2 d-flex align-items-center justify-content-center gap-2 rounded-3"
                 style={{ fontSize: '0.85rem', fontWeight: '600' }}
               >
-                <i className="fab fa-whatsapp"></i>
+                <FaWhatsapp />
                 <span>WhatsApp</span>
               </a>
             </div>

@@ -2,6 +2,16 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FadeInUp } from "../Animations";
+import {
+  FaHouse,
+  FaChevronLeft,
+  FaChevronRight,
+  FaBuilding,
+  FaFileInvoice,
+  FaShieldHalved,
+  FaServer,
+  FaScaleBalanced
+} from "../common/Icons";
 
 export default function LegalNotice() {
   const { t, i18n } = useTranslation();
@@ -36,12 +46,12 @@ export default function LegalNotice() {
           <ol className="breadcrumb-modern">
             <li className="breadcrumb-modern-item">
               <Link to="/" className="breadcrumb-modern-link">
-                <i className="fas fa-house breadcrumb-home-icon"></i>
+                <FaHouse className="breadcrumb-home-icon" />
                 <span>{t('nav.home')}</span>
               </Link>
             </li>
             <li className="breadcrumb-modern-separator" aria-hidden="true">
-              <i className={`fas fa-chevron-${isAr ? 'left' : 'right'}`}></i>
+              {isAr ? <FaChevronLeft /> : <FaChevronRight />}
             </li>
             <li className="breadcrumb-modern-item active" aria-current="page">
               <span className="breadcrumb-modern-current">
@@ -61,7 +71,7 @@ export default function LegalNotice() {
                     className="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"
                     style={{ width: "48px", height: "48px", backgroundColor: "rgba(13, 59, 102, 0.08)", color: "#0D3B66" }}
                   >
-                    <i className="fas fa-building fa-lg"></i>
+                    <FaBuilding className="fa-lg" />
                   </div>
                   <div>
                     <h4 className="fw-bold mb-1" style={{ color: "#0D3B66" }}>
@@ -109,7 +119,7 @@ export default function LegalNotice() {
                   <Col md={12}>
                     <div className="p-3 rounded-3 border" style={{ backgroundColor: "#FFFDF5", borderColor: "#FEE2B3" }}>
                       <div className="d-flex align-items-center gap-2 mb-1">
-                        <i className="fas fa-file-invoice text-warning"></i>
+                        <FaFileInvoice className="text-warning" />
                         <strong className="text-dark">
                           {isAr ? "البيانات الجبائية والقانونية (RC / IF / ICE / CNSS) :" : "Immatriculation & Registres Légaux (RC / IF / ICE / CNSS) :"}
                         </strong>
@@ -135,7 +145,7 @@ export default function LegalNotice() {
                     className="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"
                     style={{ width: "48px", height: "48px", backgroundColor: "rgba(39, 174, 96, 0.1)", color: "#27AE60" }}
                   >
-                    <i className="fas fa-shield-halved fa-lg"></i>
+                    <FaShieldHalved className="fa-lg" />
                   </div>
                   <div>
                     <h4 className="fw-bold mb-1" style={{ color: "#0D3B66" }}>
@@ -187,7 +197,7 @@ export default function LegalNotice() {
                     className="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"
                     style={{ width: "42px", height: "42px", backgroundColor: "rgba(52, 152, 219, 0.1)", color: "#2980B9" }}
                   >
-                    <i className="fas fa-server"></i>
+                    <FaServer />
                   </div>
                   <h5 className="fw-bold mb-0" style={{ color: "#0D3B66" }}>
                     {isAr ? "3. الاستضافة التقنية والأمان" : "3. Hébergement & Sécurité"}
@@ -211,7 +221,7 @@ export default function LegalNotice() {
                     className="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"
                     style={{ width: "42px", height: "42px", backgroundColor: "rgba(243, 156, 18, 0.1)", color: "#F39C12" }}
                   >
-                    <i className="fas fa-scale-balanced"></i>
+                    <FaScaleBalanced />
                   </div>
                   <h5 className="fw-bold mb-0" style={{ color: "#0D3B66" }}>
                     {isAr ? "4. الملكية الفكرية والقانون الساري" : "4. Propriété & Droit Applicable"}

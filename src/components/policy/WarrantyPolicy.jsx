@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import warranty from "../../images/warranty.webp";
 import { FadeInUp, ScaleIn } from "../Animations";
+import {
+  FaSolarPanel,
+  FaCircleCheck,
+  FaFilePdf,
+  FaMicrochip,
+  FaCircleInfo,
+  FaWhatsapp,
+} from "../common/Icons";
 
 export default function WarrantyPolicy() {
   const { t, i18n } = useTranslation();
@@ -72,7 +80,7 @@ export default function WarrantyPolicy() {
                     className={`rounded-circle d-flex align-items-center justify-content-center ${isAr ? 'ms-3' : 'me-3'}`}
                     style={{ width: "50px", height: "50px", backgroundColor: "rgba(243, 156, 18, 0.15)", color: "#F39C12", flexShrink: 0 }}
                   >
-                    <i className="fas fa-solar-panel fa-lg"></i>
+                    <FaSolarPanel className="fa-lg" />
                   </div>
                   <div>
                     <span className="section-badge mb-1" style={{ fontSize: "0.7rem" }}>{t('warranty.solarBadge')}</span>
@@ -82,11 +90,11 @@ export default function WarrantyPolicy() {
 
                 <ul className="list-unstyled mb-4">
                   <li className="d-flex align-items-start mb-2">
-                    <i className={`fas fa-check-circle text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+                    <FaCircleCheck className={`text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`} />
                     <span>{t('warranty.solarG1')}</span>
                   </li>
                   <li className="d-flex align-items-start mb-2">
-                    <i className={`fas fa-check-circle text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+                    <FaCircleCheck className={`text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`} />
                     <span>{t('warranty.solarG2')}</span>
                   </li>
                 </ul>
@@ -100,7 +108,7 @@ export default function WarrantyPolicy() {
                       rel="noopener noreferrer"
                       className="btn btn-outline-primary btn-sm rounded-pill"
                     >
-                      <i className={`fas fa-file-pdf ${isAr ? 'ms-1' : 'me-1'} text-danger`}></i> {t('warranty.jinkoBtn')}
+                      <FaFilePdf className={`${isAr ? 'ms-1' : 'me-1'} text-danger`} /> {t('warranty.jinkoBtn')}
                     </a>
                     <a
                       href="https://www.jasolar.com/uploadfile/2018/0518/20180518102313951.pdf"
@@ -108,7 +116,7 @@ export default function WarrantyPolicy() {
                       rel="noopener noreferrer"
                       className="btn btn-outline-primary btn-sm rounded-pill"
                     >
-                      <i className={`fas fa-file-pdf ${isAr ? 'ms-1' : 'me-1'} text-danger`}></i> {t('warranty.jaBtn')}
+                      <FaFilePdf className={`${isAr ? 'ms-1' : 'me-1'} text-danger`} /> {t('warranty.jaBtn')}
                     </a>
                   </div>
                 </div>
@@ -125,7 +133,7 @@ export default function WarrantyPolicy() {
                     className={`rounded-circle d-flex align-items-center justify-content-center ${isAr ? 'ms-3' : 'me-3'}`}
                     style={{ width: "50px", height: "50px", backgroundColor: "rgba(13, 59, 102, 0.15)", color: "#0D3B66", flexShrink: 0 }}
                   >
-                    <i className="fas fa-microchip fa-lg"></i>
+                    <FaMicrochip className="fa-lg" />
                   </div>
                   <div>
                     <span className="section-badge mb-1" style={{ fontSize: "0.7rem" }}>{t('warranty.inverterBadge')}</span>
@@ -135,22 +143,22 @@ export default function WarrantyPolicy() {
 
                 <ul className="list-unstyled mb-4">
                   <li className="d-flex align-items-start mb-2">
-                    <i className={`fas fa-check-circle text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+                    <FaCircleCheck className={`text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`} />
                     <span>{t('warranty.inverterG1')}</span>
                   </li>
                   <li className="d-flex align-items-start mb-2">
-                    <i className={`fas fa-check-circle text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+                    <FaCircleCheck className={`text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`} />
                     <span>{t('warranty.inverterG2')}</span>
                   </li>
                   <li className="d-flex align-items-start mb-2">
-                    <i className={`fas fa-check-circle text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+                    <FaCircleCheck className={`text-success ${isAr ? 'ms-2' : 'me-2'} mt-1`} />
                     <span>{t('warranty.inverterG3')}</span>
                   </li>
                 </ul>
 
                 <div className="p-3 rounded-3 mt-auto" style={{ backgroundColor: "#F8FAFC" }}>
                   <small className="text-muted">
-                    <i className={`fas fa-info-circle text-primary ${isAr ? 'ms-1' : 'me-1'}`}></i>
+                    <FaCircleInfo className={`text-primary ${isAr ? 'ms-1' : 'me-1'}`} />
                     {t('warranty.claimNotice')}
                   </small>
                 </div>
@@ -178,7 +186,7 @@ export default function WarrantyPolicy() {
                 rel="noopener noreferrer"
                 className="btn-whatsapp px-4 py-2"
               >
-                <i className={`fab fa-whatsapp ${isAr ? 'ms-1' : 'me-1'}`}></i> {t('warranty.helpBtn')}
+                <FaWhatsapp className={isAr ? 'ms-1' : 'me-1'} /> {t('warranty.helpBtn')}
               </a>
             </div>
           </Card>

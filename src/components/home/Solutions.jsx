@@ -10,6 +10,7 @@ import injectionReseau from "../../images/injectionReseau.webp";
 import hybride from "../../images/hybride.webp";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { FaWhatsapp } from "../common/Icons";
 
 const solutionImages = {
   1: pompageSolaire,
@@ -79,7 +80,7 @@ export default function Solutions() {
                             style={{ fontSize: "0.9rem" }}
                             aria-label={`Demander un devis WhatsApp pour ${item.title}`}
                           >
-                            <i className="fab fa-whatsapp"></i> {t('solutions.btnWhatsapp')}
+                            <FaWhatsapp className={isAr ? "ms-1" : "me-1"} /> {t('solutions.btnWhatsapp')}
                           </a>
                           <Link
                             to={`/contact?solution=${encodeURIComponent(item.title)}`}

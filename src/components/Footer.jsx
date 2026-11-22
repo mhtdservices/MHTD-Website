@@ -3,6 +3,16 @@ import { useTranslation } from 'react-i18next';
 import mhtdlog from '../images/mhtd-logo.webp';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import {
+  FaFacebookF,
+  FaWhatsapp,
+  FaPhoneAlt,
+  FaAngleLeft,
+  FaAngleRight,
+  FaLocationDot,
+  FaEnvelope,
+  FaClock
+} from './common/Icons';
 
 export default function Footer() {
   const { t, i18n } = useTranslation();
@@ -37,7 +47,7 @@ export default function Footer() {
                 className="footer-social-btn"
                 aria-label="Facebook MHTD"
               >
-                <i className="fab fa-facebook-f"></i>
+                <FaFacebookF />
               </a>
               <a
                 href="https://wa.me/212626425469?text=Bonjour%20MHTD,%20je%20souhaite%20un%20renseignement."
@@ -46,14 +56,14 @@ export default function Footer() {
                 className="footer-social-btn"
                 aria-label="WhatsApp MHTD"
               >
-                <i className="fab fa-whatsapp"></i>
+                <FaWhatsapp />
               </a>
               <a
                 href="tel:+212626425469"
                 className="footer-social-btn"
                 aria-label="Appeler MHTD"
               >
-                <i className="fas fa-phone-alt"></i>
+                <FaPhoneAlt />
               </a>
             </div>
           </Col>
@@ -66,32 +76,32 @@ export default function Footer() {
             <ul className="list-unstyled small mb-0">
               <li className="mb-2">
                 <HashLink to="/" className="footer-link">
-                  <i className={`fas fa-angle-${isAr ? 'left' : 'right'} ${isAr ? 'ms-1' : 'me-1'}`} style={{ color: '#F39C12' }}></i> {t('nav.home')}
+                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.home')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <Link to="/contact" className="footer-link">
-                  <i className={`fas fa-angle-${isAr ? 'left' : 'right'} ${isAr ? 'ms-1' : 'me-1'}`} style={{ color: '#F39C12' }}></i> {t('nav.consultation')}
+                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.consultation')}
                 </Link>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  <i className={`fas fa-angle-${isAr ? 'left' : 'right'} ${isAr ? 'ms-1' : 'me-1'}`} style={{ color: '#F39C12' }}></i> {t('nav.solutions')}
+                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.solutions')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#products" className="footer-link">
-                  <i className={`fas fa-angle-${isAr ? 'left' : 'right'} ${isAr ? 'ms-1' : 'me-1'}`} style={{ color: '#F39C12' }}></i> {t('nav.shop')}
+                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.shop')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <Link to="/garantie" className="footer-link">
-                  <i className={`fas fa-angle-${isAr ? 'left' : 'right'} ${isAr ? 'ms-1' : 'me-1'}`} style={{ color: '#F39C12' }}></i> {t('nav.warranty')}
+                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('nav.warranty')}
                 </Link>
               </li>
               <li className="mb-2">
                 <Link to="/mentions-legales" className="footer-link">
-                  <i className={`fas fa-angle-${isAr ? 'left' : 'right'} ${isAr ? 'ms-1' : 'me-1'}`} style={{ color: '#F39C12' }}></i> {isAr ? "الإشعار القانوني والخصوصية" : "Mentions Légales & Confidentialité"}
+                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {isAr ? "الإشعار القانوني والخصوصية" : "Mentions Légales & Confidentialité"}
                 </Link>
               </li>
             </ul>
@@ -138,23 +148,23 @@ export default function Footer() {
             </h6>
             <ul className="list-unstyled small text-muted mb-0">
               <li className="mb-3 d-flex align-items-start">
-                <i className={`fas fa-location-dot mt-1 ${isAr ? 'ms-2' : 'me-2'} text-danger`}></i>
+                <FaLocationDot className={`mt-1 ${isAr ? 'ms-2' : 'me-2'} text-danger`} />
                 <span>{isAr ? "حي النصر، سيدي علال البحراوي 15252، المغرب" : "HAY ENNASSER, Sidi Allal el Bahraoui 15252, Maroc"}</span>
               </li>
               <li className="mb-3 d-flex align-items-center">
-                <i className={`fas fa-phone-alt ${isAr ? 'ms-2' : 'me-2'} text-success`}></i>
+                <FaPhoneAlt className={`${isAr ? 'ms-2' : 'me-2'} text-success`} />
                 <a href="tel:+212626425469" className="text-decoration-none text-muted" dir="ltr">
                   +212 626425469
                 </a>
               </li>
               <li className="mb-3 d-flex align-items-center">
-                <i className={`fas fa-envelope ${isAr ? 'ms-2' : 'me-2'} text-primary`}></i>
+                <FaEnvelope className={`${isAr ? 'ms-2' : 'me-2'} text-primary`} />
                 <a href="mailto:mhtdservices@gmail.com" className="text-decoration-none text-muted" dir="ltr">
                   mhtdservices@gmail.com
                 </a>
               </li>
               <li className="d-flex align-items-center">
-                <i className={`fas fa-clock ${isAr ? 'ms-2' : 'me-2'} text-warning`}></i>
+                <FaClock className={`${isAr ? 'ms-2' : 'me-2'} text-warning`} />
                 <span>{isAr ? "الإثنين - السبت: 08:30 - 18:30" : "Lun - Sam : 08h30 - 18h30"}</span>
               </li>
             </ul>
@@ -190,7 +200,7 @@ export default function Footer() {
             className="d-flex align-items-center justify-content-center"
             aria-label="Email Développeur Zakaria Zinedine"
           >
-            <i className="fas fa-envelope text-primary"></i>
+            <FaEnvelope className="text-primary" />
           </a>
         </Container>
       </div>

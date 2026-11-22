@@ -1,5 +1,6 @@
 import { Card } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
+import { FaWhatsapp } from '../common/Icons';
 
 function Steps() {
   const { t, i18n } = useTranslation();
@@ -67,7 +68,7 @@ function Steps() {
         }}
       >
         <div className="d-flex align-items-center">
-          <i className={`fab fa-whatsapp fa-2x text-success ${isAr ? 'ms-3' : 'me-3'}`}></i>
+          <FaWhatsapp className={`fa-2x text-success ${isAr ? 'ms-3' : 'me-3'}`} />
           <div>
             <h6 className="fw-bold mb-1 text-dark">{t('contact.urgentTitle')}</h6>
             <p className="text-muted small mb-2">{t('contact.urgentDesc')}</p>

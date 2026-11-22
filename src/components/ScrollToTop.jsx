@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaArrowUp } from './common/Icons';
 
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -28,7 +29,7 @@ export default function ScrollToTop() {
           aria-label="Retour en haut"
           className="scroll-to-top-btn"
         >
-          <i className="fas fa-arrow-up"></i>
+          <FaArrowUp />
         </motion.button>
       )}
     </AnimatePresence>

@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { productsData } from '../../data';
 import { FadeInUp, StaggerContainer, staggerChildVariants } from '../Animations';
+import { FaWhatsapp, FaArrowLeft, FaArrowRight } from '../common/Icons';
 
 export default function Products() {
   const { t, i18n } = useTranslation();
@@ -106,7 +107,7 @@ export default function Products() {
                             style={{ fontSize: '0.8rem', padding: '0.4rem 0.6rem' }}
                             aria-label={`Commander ${title} sur WhatsApp`}
                           >
-                            <i className="fab fa-whatsapp"></i> {t('products.btnOrder')}
+                            <FaWhatsapp /> {t('products.btnOrder')}
                           </a>
                           <Link
                             to={`/produits/${product.id}`}
@@ -118,7 +119,7 @@ export default function Products() {
                               padding: '0.32rem 0.6rem'
                             }}
                           >
-                            {t('products.btnDetails')} <i className={`fas ${isAr ? 'fa-arrow-left' : 'fa-arrow-right'} ms-1`}></i>
+                            {t('products.btnDetails')} {isAr ? <FaArrowLeft className="ms-1" /> : <FaArrowRight className="ms-1" />}
                           </Link>
                         </div>
                       </Card.Body>

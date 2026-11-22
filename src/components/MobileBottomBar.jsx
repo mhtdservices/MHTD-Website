@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { FaPhoneAlt, FaWhatsapp, FaFileInvoiceDollar } from './common/Icons';
 
 export default function MobileBottomBar() {
   const { t, i18n } = useTranslation();
@@ -22,7 +23,7 @@ export default function MobileBottomBar() {
           aria-label={isAr ? "اتصال هاتفي مباشر" : "Appeler directement"}
         >
           <div className="mobile-bottom-icon-wrap">
-            <i className="fas fa-phone-alt"></i>
+            <FaPhoneAlt />
           </div>
           <span className="mobile-bottom-label">
             {isAr ? "اتصال" : "Appeler"}
@@ -38,7 +39,7 @@ export default function MobileBottomBar() {
           aria-label={isAr ? "تواصل عبر واتساب" : "Contacter sur WhatsApp"}
         >
           <div className="mobile-bottom-icon-wrap whatsapp-icon-wrap">
-            <i className="fab fa-whatsapp"></i>
+            <FaWhatsapp />
           </div>
           <span className="mobile-bottom-label">
             {isAr ? "واتساب" : "WhatsApp"}
@@ -52,7 +53,7 @@ export default function MobileBottomBar() {
           aria-label={isAr ? "طلب عرض أسعار" : "Demander un devis"}
         >
           <div className="mobile-bottom-icon-wrap quote-icon-wrap">
-            <i className="fas fa-file-invoice-dollar"></i>
+            <FaFileInvoiceDollar />
           </div>
           <span className="mobile-bottom-label">
             {isAr ? "عرض سعر" : "Devis"}

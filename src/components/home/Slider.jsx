@@ -1,7 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import { HashLink } from 'react-router-hash-link';
 import { useTranslation } from 'react-i18next';
-import agricole from '../../images/agricole.webp';
+import { FaWhatsapp } from '../common/Icons';
 import arrosage from '../../images/arrosage.webp';
 import ongrid from '../../images/ongrid.webp';
 
@@ -86,7 +86,7 @@ function Slider() {
                     rel="noopener noreferrer"
                     className="btn-whatsapp px-4 py-2"
                   >
-                    <i className="fab fa-whatsapp fa-lg"></i>
+                    <FaWhatsapp className="fa-lg me-1" />
                     {t('slider.ctaWhatsapp')}
                   </a>
 

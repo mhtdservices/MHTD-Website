@@ -1,5 +1,13 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import {
+  FaBuildingCircleCheck,
+  FaLocationDot,
+  FaClock,
+  FaPhone,
+  FaEnvelope,
+  FaDiamondTurnRight
+} from "../common/Icons";
 
 export default function WorkDetails() {
   const { t, i18n } = useTranslation();
@@ -29,7 +37,7 @@ export default function WorkDetails() {
                       className="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0"
                       style={{ width: "48px", height: "48px", backgroundColor: "rgba(13, 59, 102, 0.08)", color: "#0D3B66" }}
                     >
-                      <i className="fas fa-building-circle-check fa-lg"></i>
+                      <FaBuildingCircleCheck className="fa-lg" />
                     </div>
                     <div>
                       <h5 className="fw-bold mb-1" style={{ color: "#0D3B66" }}>
@@ -43,7 +51,7 @@ export default function WorkDetails() {
 
                   <ul className="list-unstyled mb-4">
                     <li className="d-flex align-items-start mb-3">
-                      <i className={`fas fa-location-dot fa-lg text-primary mt-1 ${isAr ? 'ms-3' : 'me-3'}`}></i>
+                      <FaLocationDot className={`fa-lg text-primary mt-1 ${isAr ? 'ms-3' : 'me-3'}`} />
                       <div>
                         <strong className="text-dark">{t('contact.addressLabel')}</strong>
                         <p className="text-muted small mb-0">
@@ -53,7 +61,7 @@ export default function WorkDetails() {
                     </li>
 
                     <li className="d-flex align-items-start mb-3">
-                      <i className={`fas fa-clock fa-lg text-warning mt-1 ${isAr ? 'ms-3' : 'me-3'}`}></i>
+                      <FaClock className={`fa-lg text-warning mt-1 ${isAr ? 'ms-3' : 'me-3'}`} />
                       <div>
                         <strong className="text-dark">{t('contact.hoursLabel')}</strong>
                         <p className="text-muted small mb-0">{t('contact.hoursWeek')}</p>
@@ -62,7 +70,7 @@ export default function WorkDetails() {
                     </li>
 
                     <li className="d-flex align-items-start mb-3">
-                      <i className={`fas fa-phone fa-lg text-success mt-1 ${isAr ? 'ms-3' : 'me-3'}`}></i>
+                      <FaPhone className={`fa-lg text-success mt-1 ${isAr ? 'ms-3' : 'me-3'}`} />
                       <div>
                         <strong className="text-dark">{t('contact.phoneLabel')}</strong>
                         <p className="text-muted small mb-0">
@@ -74,7 +82,7 @@ export default function WorkDetails() {
                     </li>
 
                     <li className="d-flex align-items-start">
-                      <i className={`fas fa-envelope fa-lg text-danger mt-1 ${isAr ? 'ms-3' : 'me-3'}`}></i>
+                      <FaEnvelope className={`fa-lg text-danger mt-1 ${isAr ? 'ms-3' : 'me-3'}`} />
                       <div>
                         <strong className="text-dark">{t('contact.emailLabel')}</strong>
                         <p className="text-muted small mb-0">
@@ -95,7 +103,7 @@ export default function WorkDetails() {
                     className="btn btn-outline-primary w-100 btn-sm py-2"
                     style={{ borderRadius: "20px", fontWeight: "600" }}
                   >
-                    <i className={`fas fa-diamond-turn-right ${isAr ? 'ms-1' : 'me-1'}`}></i> {t('contact.mapsBtn')}
+                    {isAr ? <FaDiamondTurnRight className="ms-1" /> : <FaDiamondTurnRight className="me-1" />} {t('contact.mapsBtn')}
                   </a>
                 </div>
               </Card.Body>

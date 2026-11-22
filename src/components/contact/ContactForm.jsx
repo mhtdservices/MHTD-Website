@@ -3,6 +3,13 @@ import { Button, Form, Card, Alert, Spinner } from "react-bootstrap";
 import emailjs from "emailjs-com";
 import { useLocation, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import {
+  FaCircleCheck,
+  FaTriangleExclamation,
+  FaWhatsapp,
+  FaPaperPlane,
+  FaShieldHalved
+} from "../common/Icons";
 
 export default function ContactForm() {
   const { t, i18n } = useTranslation();
@@ -129,7 +136,11 @@ ${currentFormData.message || "Aucune note complémentaire."}
           className="rounded-3"
         >
           <div className="d-flex align-items-start">
-            <i className={`fas ${status.success ? "fa-circle-check" : "fa-triangle-exclamation"} ${isAr ? 'ms-2' : 'me-2'} mt-1`}></i>
+            {status.success ? (
+              <FaCircleCheck className={`${isAr ? 'ms-2' : 'me-2'} mt-1 text-success`} />
+            ) : (
+              <FaTriangleExclamation className={`${isAr ? 'ms-2' : 'me-2'} mt-1 text-danger`} />
+            )}
             <div className="flex-grow-1">
               <div>{status.message}</div>
               {!status.success && lastSubmittedData && (
@@ -145,7 +156,7 @@ ${currentFormData.message || "Aucune note complémentaire."}
                     className="btn btn-success btn-sm d-inline-flex align-items-center gap-2 fw-semibold px-3 py-2 shadow-sm"
                     style={{ backgroundColor: '#25D366', borderColor: '#25D366', borderRadius: '20px' }}
                   >
-                    <i className="fab fa-whatsapp fa-lg"></i>
+                    <FaWhatsapp className="fa-lg" />
                     <span>{isAr ? "إرسال هذا الطلب عبر واتساب الآن" : "Envoyer cette demande sur WhatsApp en 1 clic"}</span>
                   </a>
                 </div>
@@ -248,7 +259,7 @@ ${currentFormData.message || "Aucune note complémentaire."}
             </>
           ) : (
             <>
-              <i className={`fas fa-paper-plane ${isAr ? "ms-2" : "me-2"}`}></i> {t('contact.formSubmit')}
+              <FaPaperPlane className={isAr ? "ms-2" : "me-2"} /> {t('contact.formSubmit')}
             </>
           )}
         </Button>
@@ -256,7 +267,7 @@ ${currentFormData.message || "Aucune note complémentaire."}
         {/* Protection des données Loi 09-08 */}
         <div className="mt-3 text-center">
           <p className="text-muted small mb-0 d-flex flex-wrap align-items-center justify-content-center gap-1" style={{ fontSize: "0.78rem" }}>
-            <i className="fas fa-shield-halved text-success"></i>
+            <FaShieldHalved className="text-success" />
             <span>
               {isAr
                 ? "معلوماتكم محمية ومخصصة حصراً لمعالجة طلبكم طبقاً للقانون المغربي رقم 09-08."
