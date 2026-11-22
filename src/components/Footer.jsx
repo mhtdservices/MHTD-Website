@@ -102,7 +102,7 @@ export default function Footer() {
               </li>
               <li className="mb-2">
                 <Link to="/mentions-legales" className="footer-link">
-                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {isAr ? "الإشعار القانوني والخصوصية" : "Mentions Légales & Confidentialité"}
+                  {isAr ? <FaAngleLeft className="ms-1" style={{ color: '#F39C12' }} /> : <FaAngleRight className="me-1" style={{ color: '#F39C12' }} />} {t('footer.legalLink')}
                 </Link>
               </li>
             </ul>
@@ -116,27 +116,27 @@ export default function Footer() {
             <ul className="list-unstyled small mb-0">
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  {isAr ? "ضخ المياه بالطاقة الشمسية" : "Pompage Solaire Agricole"}
+                  {t('footer.sol1')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  {isAr ? "أنظمة السقي الأوتوماتيكي" : "Systèmes d'Arrosage Automatique"}
+                  {t('footer.sol2')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  {isAr ? "سخانات الماء بالطاقة الشمسية" : "Chauffe-Eau Solaire (200L / 300L)"}
+                  {t('footer.sol3')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  {isAr ? "محطات متصلة بالشبكة (On-Grid)" : "Installation Raccordée (On-Grid)"}
+                  {t('footer.sol4')}
                 </HashLink>
               </li>
               <li className="mb-2">
                 <HashLink smooth to="/#solutions" className="footer-link">
-                  {isAr ? "أنظمة شمسية هجينة مع بطاريات" : "Système Solaire Hybride"}
+                  {t('footer.sol5')}
                 </HashLink>
               </li>
             </ul>
@@ -149,24 +149,24 @@ export default function Footer() {
             </h6>
             <ul className="list-unstyled small text-muted mb-0">
               <li className="mb-3 d-flex align-items-start">
-                <FaLocationDot className={`mt-1 ${isAr ? 'ms-2' : 'me-2'} text-danger`} />
-                <span>{isAr ? "حي النصر، سيدي علال البحراوي 15252، المغرب" : "HAY ENNASSER, Sidi Allal el Bahraoui 15252, Maroc"}</span>
+                <FaLocationDot className="mt-1 me-2 text-danger" />
+                <span>{t('footer.address')}</span>
               </li>
               <li className="mb-3 d-flex align-items-center">
-                <FaPhoneAlt className={`${isAr ? 'ms-2' : 'me-2'} text-success`} />
+                <FaPhoneAlt className="me-2 text-success" />
                 <a href="tel:+212626425469" className="text-decoration-none text-muted" dir="ltr">
                   +212 626425469
                 </a>
               </li>
               <li className="mb-3 d-flex align-items-center">
-                <FaEnvelope className={`${isAr ? 'ms-2' : 'me-2'} text-primary`} />
+                <FaEnvelope className="me-2 text-primary" />
                 <a href="mailto:mhtdservices@gmail.com" className="text-decoration-none text-muted" dir="ltr">
                   mhtdservices@gmail.com
                 </a>
               </li>
               <li className="d-flex align-items-center">
-                <FaClock className={`${isAr ? 'ms-2' : 'me-2'} text-warning`} />
-                <span>{isAr ? "الإثنين - السبت: 08:30 - 18:30" : "Lun - Sam : 08h30 - 18h30"}</span>
+                <FaClock className="me-2 text-warning" />
+                <span>{t('footer.hours')}</span>
               </li>
             </ul>
           </Col>
@@ -179,7 +179,7 @@ export default function Footer() {
           <span>MHTD © {currentYear}</span>
           <span className="d-none d-sm-inline">•</span>
           <Link to="/mentions-legales" style={{ textDecoration: 'none', color: '#475569', fontSize: '0.8rem' }}>
-            {isAr ? "الخصوصية والشروط" : "Mentions Légales & Données"}
+            {t('footer.privacyLink')}
           </Link>
           <span className="d-none d-sm-inline">🔥</span>
           <span>

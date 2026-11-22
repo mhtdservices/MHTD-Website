@@ -40,8 +40,7 @@ const solutionImages2x = {
 };
 
 export default function Solutions() {
-  const { t, i18n } = useTranslation();
-  const isAr = i18n.language === 'ar';
+  const { t } = useTranslation();
   const phoneNumber = "212626425469";
   const items = t('solutions.items', { returnObjects: true }) || [];
 
@@ -61,9 +60,7 @@ export default function Solutions() {
         <StaggerContainer>
           <Row xs={1} md={2} lg={3} className="g-4">
             {items.map((item) => {
-              const quoteMessage = i18n.language === 'ar'
-                ? `السلام عليكم MHTD، أود الحصول على عرض سعر مجاني لخدمة : ${item.title}.`
-                : `Bonjour MHTD, je souhaite un devis gratuit pour la solution : ${item.title}.`;
+              const quoteMessage = t('solutions.quoteMsg', { title: item.title });
               const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(quoteMessage)}`;
 
               return (
@@ -102,7 +99,7 @@ export default function Solutions() {
                             style={{ fontSize: "0.9rem" }}
                             aria-label={`Demander un devis WhatsApp pour ${item.title}`}
                           >
-                            <FaWhatsapp className={isAr ? "ms-1" : "me-1"} /> {t('solutions.btnWhatsapp')}
+                            <FaWhatsapp className="me-1" /> {t('solutions.btnWhatsapp')}
                           </a>
                           <Link
                             to={`/contact?solution=${encodeURIComponent(item.title)}`}

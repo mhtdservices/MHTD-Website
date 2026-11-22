@@ -34,9 +34,7 @@ export default function Products() {
               const title = isAr ? product.title_ar || product.title : product.title;
               const desc = isAr ? product.discreption_ar || product.discreption : product.discreption;
 
-              const whatsappMsg = isAr
-                ? `السلام عليكم MHTD، أود طلب أو الاستفسار عن عرض سعر لمنتج : ${title}.`
-                : `Bonjour MHTD, je souhaite commander ou avoir un devis pour : ${title}.`;
+              const whatsappMsg = t('products.whatsappMsg', { title });
               const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMsg)}`;
 
               return (

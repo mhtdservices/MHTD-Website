@@ -20,10 +20,7 @@ export default function WarrantyPolicy() {
   const { t, i18n } = useTranslation();
   const isAr = i18n.language === 'ar';
   const phoneNumber = "212626425469";
-
-  const warrantyMsg = isAr
-    ? "السلام عليكم شركة MHTD، لدي استفسار بخصوص ضمان المعدات والتجهيزات."
-    : "Bonjour MHTD, j'ai une question concernant la garantie de mes équipements.";
+  const warrantyMsg = t('warranty.whatsappMsg');
 
   return (
     <>

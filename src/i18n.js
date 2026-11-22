@@ -61,6 +61,7 @@ const resources = {
         desc: "MHTD conçoit, installe et maintient des installations solaires fiables, économiques et conformes aux plus hauts standards de durabilité au Maroc.",
         btnWhatsapp: "Devis WhatsApp Rapide",
         btnForm: "Formulaire de Devis",
+        quoteMsg: "Bonjour MHTD, je souhaite un devis gratuit pour la solution : {{title}}.",
         items: [
           {
             id: 1,
@@ -111,7 +112,9 @@ const resources = {
         btnBack: "Retour à l'accueil",
         btnBackShop: "Retour à la boutique",
         featuresHeader: "Caractéristiques Techniques :",
-        whatsappOrder: "Commander / Devis sur WhatsApp"
+        whatsappOrder: "Commander / Devis sur WhatsApp",
+        whatsappMsg: "Bonjour MHTD, je souhaite commander ou avoir un devis pour : {{title}}.",
+        detailMsg: "Bonjour MHTD ! Je suis intéressé par l'article : {{title}}. Pouvez-vous me donner plus de détails et son prix ?"
       },
       values: {
         badge: "Pourquoi Choisir MHTD",
@@ -203,7 +206,8 @@ const resources = {
         claimNotice: "Toute réclamation est prise en charge par notre équipe technique basée à Sidi Allal El Bahraoui.",
         helpTitle: "Une question concernant la garantie de votre matériel ?",
         helpDesc: "Notre service technique est disponible pour vous assister et vérifier la couverture de vos équipements.",
-        helpBtn: "Contacter le Support Garantie sur WhatsApp"
+        helpBtn: "Contacter le Support Garantie sur WhatsApp",
+        whatsappMsg: "Bonjour MHTD, j'ai une question concernant la garantie de mes équipements."
       },
       footer: {
         desc: "MHTD — Entreprise marocaine de référence spécialisée dans l'énergie solaire photovoltaïque, le pompage solaire et les solutions d'arrosage automatique.",
@@ -211,7 +215,16 @@ const resources = {
         solutionsTitle: "Nos Solutions",
         contactTitle: "Contact Direct",
         copyright: "Copyright MHTD ©",
-        realizedBy: "Réalisé par"
+        realizedBy: "Réalisé par",
+        legalLink: "Mentions Légales & Confidentialité",
+        sol1: "Pompage Solaire Agricole",
+        sol2: "Systèmes d'Arrosage Automatique",
+        sol3: "Chauffe-Eau Solaire (200L / 300L)",
+        sol4: "Installation Raccordée (On-Grid)",
+        sol5: "Système Solaire Hybride",
+        address: "HAY ENNASSER, Sidi Allal el Bahraoui 15252, Maroc",
+        hours: "Lun - Sam : 08h30 - 18h30",
+        privacyLink: "Mentions Légales & Données"
       }
     }
   },
@@ -274,6 +287,7 @@ const resources = {
         desc: "تقوم شركة MHTD بدراسة وتوريد وتركيب وصيانة أنظمة شمسية متينة واقتصادية بأعلى معايير الجودة في المغرب.",
         btnWhatsapp: "طلب عرض سعر عبر واتساب",
         btnForm: "استمارة طلب السعر",
+        quoteMsg: "السلام عليكم MHTD، أود الحصول على عرض سعر مجاني لخدمة : {{title}}.",
         items: [
           {
             id: 1,
@@ -324,7 +338,9 @@ const resources = {
         btnBack: "العودة للرئيسية",
         btnBackShop: "العودة للمتجر",
         featuresHeader: "الخصائص والمواصفات التقنية :",
-        whatsappOrder: "الطلب وعرض الأسعار عبر واتساب"
+        whatsappOrder: "الطلب وعرض الأسعار عبر واتساب",
+        whatsappMsg: "السلام عليكم MHTD، أود طلب أو الاستفسار عن عرض سعر لمنتج : {{title}}.",
+        detailMsg: "السلام عليكم شركة MHTD، أنا مهتم بالمنتج: {{title}}. هل يمكن تزويدي بالمزيد من التفاصيل وسعر التوريد والتركيب؟"
       },
       values: {
         badge: "لماذا تختار MHTD",
@@ -416,7 +432,8 @@ const resources = {
         claimNotice: "تتم معالجة جميع الاستفسارات وطلبات الصيانة بواسطة فريقنا التقني المتواجد بسيدي علال البحراوي.",
         helpTitle: "هل لديكم سؤال حول ضمان معداتكم ؟",
         helpDesc: "فريق الدعم الفني جاهز للإجابة والتأكد من تغطية جميع مكونات محطتكم.",
-        helpBtn: "التواصل مع الدعم الفني للضمان عبر واتساب"
+        helpBtn: "التواصل مع الدعم الفني للضمان عبر واتساب",
+        whatsappMsg: "السلام عليكم شركة MHTD، لدي استفسار بخصوص ضمان المعدات والتجهيزات."
       },
       footer: {
         desc: "MHTD — مقاولة مغربية رائدة متخصصة في الطاقة الشمسية الكهروضوئية، الضخ الشمسي، وأنظمة الري والسقي الأوتوماتيكي.",
@@ -424,7 +441,16 @@ const resources = {
         solutionsTitle: "حلولنا الرئيسية",
         contactTitle: "معلومات الاتصال",
         copyright: "جميع الحقوق محفوظة MHTD ©",
-        realizedBy: "تصميم وتطوير"
+        realizedBy: "تصميم وتطوير",
+        legalLink: "الإشعار القانوني والخصوصية",
+        sol1: "ضخ المياه بالطاقة الشمسية",
+        sol2: "أنظمة السقي الأوتوماتيكي",
+        sol3: "سخانات الماء بالطاقة الشمسية",
+        sol4: "محطات متصلة بالشبكة (On-Grid)",
+        sol5: "أنظمة شمسية هجينة مع بطاريات",
+        address: "حي النصر، سيدي علال البحراوي 15252، المغرب",
+        hours: "الإثنين - السبت: 08:30 - 18:30",
+        privacyLink: "الخصوصية والشروط"
       }
     }
   }

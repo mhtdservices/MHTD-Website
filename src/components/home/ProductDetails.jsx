@@ -45,9 +45,7 @@ export default function ProductDetails() {
   const description = isAr ? (product.discreption_ar || product.discreption) : product.discreption;
   const features = isAr ? (product.featrues_ar || product.featrues) : product.featrues;
 
-  const message = isAr
-    ? `السلام عليكم شركة MHTD، أنا مهتم بالمنتج: ${title}. هل يمكن تزويدي بالمزيد من التفاصيل وسعر التوريد والتركيب؟`
-    : `Bonjour MHTD ! Je suis intéressé par l'article : ${title}. Pouvez-vous me donner plus de détails et son prix ?`;
+  const message = t('products.detailMsg', { title });
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
