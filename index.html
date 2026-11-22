@@ -30,6 +30,15 @@
     <!-- Preload critical Cairo WOFF2 fonts -->
     <link rel="preload" href="/fonts/cairo-arabic-700-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href="/fonts/cairo-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <style>
+      /* Critical Above-the-Fold Shell CSS */
+      body { margin: 0; font-family: 'Cairo', system-ui, -apple-system, sans-serif; background-color: #fff; color: #1E293B; }
+      .bg-gradient-topbar { background: linear-gradient(90deg, #092A4A 0%, #0D3B66 50%, #154D81 100%) !important; }
+      .navbar-custom { background-color: #FFFFFF !important; box-shadow: 0 4px 20px rgba(13,59,102,0.08); border-bottom: 1px solid #E2E8F0; z-index: 1030; }
+      .navbar-logo { height: 52px !important; max-height: 52px !important; width: auto !important; object-fit: contain; }
+      [dir="rtl"] { direction: rtl; text-align: right; }
+      [dir="ltr"] { direction: ltr; text-align: left; }
+    </style>
     <meta
       name="description"
       content="MHTD Services — Entreprise marocaine spécialisée dans l'énergie solaire photovoltaïque, le pompage solaire pour puits et l'arrosage automatique au Maroc. Devis gratuit sous 24h."
