@@ -82,9 +82,23 @@ function purgeCssPlugin() {
   };
 }
 
+function nonBlockingCssPlugin() {
+  return {
+    name: 'vite-plugin-non-blocking-css',
+    enforce: 'post',
+    apply: 'build',
+    transformIndexHtml(html) {
+      return html.replace(
+        /<link rel="stylesheet" crossorigin href="(\/assets\/[^"]+\.css)">/g,
+        '<link rel="preload" as="style" href="$1" crossorigin><link rel="stylesheet" crossorigin href="$1" media="print" onload="this.media=\'all\'"><noscript><link rel="stylesheet" crossorigin href="$1"></noscript>'
+      );
+    },
+  };
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), purgeCssPlugin()],
+  plugins: [react(), purgeCssPlugin(), nonBlockingCssPlugin()],
   base: '/',
   build: {
     outDir: 'dist',
