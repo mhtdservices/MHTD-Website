@@ -6,11 +6,17 @@ import { m } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { FadeInUp, StaggerContainer, staggerChildVariants } from "../Animations";
 import pompageSolaire from "../../images/pomageSolaire.webp";
+import pompageSolaire2x from "../../images/pomageSolaire@2x.webp";
 import chauffeEauSolaire from "../../images/chauffeeausolaire.webp";
+import chauffeEauSolaire2x from "../../images/chauffeeausolaire@2x.webp";
 import energisSolaire from "../../images/energisSolaire.webp";
+import energisSolaire2x from "../../images/energisSolaire@2x.webp";
 import arrosageAutomatique from "../../images/arrosageAutomatique.webp";
+import arrosageAutomatique2x from "../../images/arrosageAutomatique@2x.webp";
 import injectionReseau from "../../images/injectionReseau.webp";
+import injectionReseau2x from "../../images/injectionReseau@2x.webp";
 import hybride from "../../images/hybride.webp";
+import hybride2x from "../../images/hybride@2x.webp";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { FaWhatsapp } from "../common/Icons";
@@ -22,6 +28,15 @@ const solutionImages = {
   4: arrosageAutomatique,
   5: injectionReseau,
   6: hybride,
+};
+
+const solutionImages2x = {
+  1: pompageSolaire2x,
+  2: chauffeEauSolaire2x,
+  3: energisSolaire2x,
+  4: arrosageAutomatique2x,
+  5: injectionReseau2x,
+  6: hybride2x,
 };
 
 export default function Solutions() {
@@ -59,12 +74,15 @@ export default function Solutions() {
                         <Card.Img
                           variant="top"
                           src={solutionImages[item.id] || pompageSolaire}
+                          srcSet={solutionImages2x[item.id] ? `${solutionImages[item.id]} 500w, ${solutionImages2x[item.id]} 1000w` : undefined}
+                          sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 400px"
                           alt={item.title}
                           className="w-100 h-100"
                           style={{ objectFit: "cover", aspectRatio: "400/220" }}
                           width="400"
                           height="220"
                           loading="lazy"
+                          decoding="async"
                         />
                       </div>
                       <Card.Body className="d-flex flex-column p-4">

@@ -51,6 +51,8 @@ export default function Products() {
                         <Card.Img
                           variant="top"
                           src={product.imgurl}
+                          srcSet={product.imgurl2x ? `${product.imgurl} 500w, ${product.imgurl2x} 1000w` : undefined}
+                          sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 300px"
                           alt={title}
                           className="w-100 h-100"
                           style={{
@@ -63,6 +65,7 @@ export default function Products() {
                           width="300"
                           height="155"
                           loading="lazy"
+                          decoding="async"
                         />
                       </div>
 

@@ -91,9 +91,15 @@ export default function ProductDetails() {
                 >
                   <img
                     src={product.imgurl}
+                    srcSet={product.imgurl2x ? `${product.imgurl} 500w, ${product.imgurl2x} 1000w` : undefined}
+                    sizes="(max-width: 768px) 100vw, 500px"
                     alt={title}
                     className="img-fluid"
                     style={{ maxHeight: '340px', objectFit: 'contain' }}
+                    width="500"
+                    height="340"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </Col>

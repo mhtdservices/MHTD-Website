@@ -46,6 +46,7 @@ function Slider() {
                 style={{ objectFit: 'cover' }}
                 fetchPriority={idx === 0 ? "high" : "low"}
                 loading={idx === 0 ? "eager" : "lazy"}
+                decoding={idx === 0 ? "sync" : "async"}
                 width="1280"
                 height="720"
               />

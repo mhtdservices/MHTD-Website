@@ -1,10 +1,17 @@
 import chauffeEauSolaire from "./images/chauffe-eau-solaire.webp";
+import chauffeEauSolaire2x from "./images/chauffe-eau-solaire@2x.webp";
 import jasolar from "./images/jasolar.webp";
+import jasolar2x from "./images/jasolar@2x.webp";
 import onduleur from "./images/onduleur.webp";
+import onduleur2x from "./images/onduleur@2x.webp";
 import accessoires from "./images/accessoires.webp";
+import accessoires2x from "./images/accessoires@2x.webp";
 import coffret from "./images/coffret1.webp";
+import coffret2x from "./images/coffret1@2x.webp";
 import eclairageSolaire from "./images/eclairage-solaire.webp";
+import eclairageSolaire2x from "./images/eclairage-solaire@2x.webp";
 import pompes from "./images/pompe.webp";
+import pompes2x from "./images/pompe@2x.webp";
 
 export const productsData = [
   {
@@ -16,6 +23,7 @@ export const productsData = [
     featrues: "Le système de chauffe-eau solaire 300L (ou 200L) est composé de capteurs solaires thermiques et d'un ballon de stockage isolé.",
     featrues_ar: "نظام سخان شمسي سعة 200 أو 300 لتر بألواح حرارية عالية الجودة وخزان معزول متين مقاوم للصدأ.",
     imgurl: chauffeEauSolaire,
+    imgurl2x: chauffeEauSolaire2x,
   },
   {
     id: 2,
@@ -26,6 +34,7 @@ export const productsData = [
     featrues: "Explorez notre gamme complète de coffrets personnalisés en fonction de la taille de votre installation, fabriqués avec des composants certifiés.",
     featrues_ar: "خزائن مفصلة حسب حجم المنشأة والمعدات، مصنوعة من مواد معدنية وPVC متينة لضمان حماية قصوى.",
     imgurl: coffret,
+    imgurl2x: coffret2x,
   },
   {
     id: 3,
@@ -36,6 +45,7 @@ export const productsData = [
     featrues: "Gamme complète adaptée à chaque besoin : injection réseau (On-Grid), sites isolés autonomes (Off-Grid) et solutions hybrides avec batteries.",
     featrues_ar: "محولات متصلة بالشبكة ومحولات مستقلة وهجينة متوافقة مع البطاريات من كبرى الماركات العالمية المعتمدة.",
     imgurl: onduleur,
+    imgurl2x: onduleur2x,
   },
   {
     id: 4,
@@ -46,6 +56,7 @@ export const productsData = [
     featrues: "Câbles solaires certifiés anti-UV, connecteurs MC4 étanches, parafoudres, disjoncteurs DC et structures de montage robustes.",
     featrues_ar: "معدات ومستلزمات أصلية تضمن سلامة واستدامة المنظومة الشمسية لسنوات طويلة بأعلى معايير السلامة.",
     imgurl: accessoires,
+    imgurl2x: accessoires2x,
   },
   {
     id: 5,
@@ -56,6 +67,7 @@ export const productsData = [
     featrues: "Systèmes d'éclairage LED haute puissance, batterie lithium longue durée intégrée et allumage automatique crépusculaire.",
     featrues_ar: "سهلة التركيب دون كابلات أرضية، مجهزة ببطاريات ليثيوم طويلة الأمد وحساسات حركة ذكية ومقاومة للماء والعوامل الجوية.",
     imgurl: eclairageSolaire,
+    imgurl2x: eclairageSolaire2x,
   },
   {
     id: 6,
@@ -66,6 +78,7 @@ export const productsData = [
     featrues: "Modules monocristallins half-cell avec rendements élevés, de 280W à 660W, assortis d'une garantie de performance de 25 ans.",
     featrues_ar: "طرازات متعددة بقدرات تبدأ من 280W وتصل إلى 660W نصف خلوية (Half-Cell) مع ضمان أداء خطي 25 سنة.",
     imgurl: jasolar,
+    imgurl2x: jasolar2x,
   },
   {
     id: 7,
@@ -76,5 +89,6 @@ export const productsData = [
     featrues: "Corps en acier inoxydable (Inox), moteur à haut rendement énergétique et variateur solaire intelligent pour régulation automatique.",
     featrues_ar: "مصنوعة من الفولاذ المقاوم للصدأ (Inox)، مصممة للعمل الشاق وتدفق المياه العالي مع أجهزة التحكم الذكية.",
     imgurl: pompes,
+    imgurl2x: pompes2x,
   },
 ];
