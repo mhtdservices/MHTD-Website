@@ -24,6 +24,14 @@ function purgeCssPlugin() {
         css: cssFiles,
         safelist: {
           standard: [
+            /^col/,
+            /^row/,
+            /^g-/,
+            /^gx-/,
+            /^gy-/,
+            /^order-/,
+            /^offset-/,
+            /^container/,
             /^fade/,
             /^show/,
             /^collapse/,
@@ -46,8 +54,8 @@ function purgeCssPlugin() {
             '[dir="rtl"]',
             '[dir="ltr"]',
           ],
-          deep: [/carousel/, /offcanvas/, /dropdown/, /navbar/, /nav/, /modal/, /spinner/],
-          greedy: [/carousel/, /offcanvas/, /dropdown/, /navbar/, /nav/, /modal/, /spinner/],
+          deep: [/carousel/, /offcanvas/, /dropdown/, /navbar/, /nav/, /modal/, /spinner/, /col/, /row/],
+          greedy: [/carousel/, /offcanvas/, /dropdown/, /navbar/, /nav/, /modal/, /spinner/, /col/, /row/],
         },
       });
 
